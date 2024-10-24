@@ -119,6 +119,12 @@
                         PrintHelp();
                         break;
 
+                    case "out":
+                        if (currentRoom?.ShortDescription == "Hallway" ){
+                            Move("east");
+                        }
+                        break;
+
                     default:
                         Console.WriteLine("I don't know what command.");
                         break;
@@ -155,7 +161,7 @@
             Console.WriteLine("You are lost. You are alone. You wander");
             Console.WriteLine("around the university.");
             Console.WriteLine();
-            Console.WriteLine("Navigate by typing 'north', 'south', 'east', or 'west'.");
+            Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
             Console.WriteLine("Type 'look' for more details.");
             Console.WriteLine("Type 'back' to go to the previous room.");
             Console.WriteLine("Type 'help' to print this message again.");
