@@ -5,7 +5,11 @@ namespace WorldOfZuul{
         {
             items = new Dictionary<string, int>();
         }
-    
+
+        public void AddItem(string itemName, int value)
+        {
+            items.Add(itemName, value);
+        }
     }
     /*private Dictionary<string, int> items;
 

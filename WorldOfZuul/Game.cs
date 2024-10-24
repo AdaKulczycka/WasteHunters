@@ -4,9 +4,13 @@
     {
         private Room? currentRoom;
         private Room? previousRoom;
+        private Inventory inventory;
+
+
 
         public Game()
         {
+            inventory = new Inventory();
             CreateRooms();
         }
 
@@ -34,9 +38,9 @@
 
 
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
-            bathroom.SetExits(null, bedroom, hallway, null);
-            bedroom.SetExits(null, null, kitchen, bathroom);
-            kitchen.SetExits(bedroom, null, livingRoom, hallway);
+            bathroom.SetExits(null, null, hallway, bedroom);
+            bedroom.SetExits(null, bathroom, kitchen, bathroom);
+            kitchen.SetExits(bedroom, hallway, livingRoom, null);
             livingRoom.SetExits(kitchen, null, null, null);
 
             cityCenter.SetExits(factory, beach, mall, hallway);
@@ -124,6 +128,10 @@
                             Move("east");
                         }
                         break;
+                    
+                    case "take":
+                        TakeItem(command.Name, 0);
+                        break;
 
                     default:
                         Console.WriteLine("I don't know what command.");
@@ -147,7 +155,10 @@
             }
         }
 
-
+        private void TakeItem(string itemName, int value)
+        {
+            inventory.AddItem(itemName, 0);
+        }
         private static void PrintWelcome()
         {
             Console.WriteLine("Welcome to the World of Zuul!");
