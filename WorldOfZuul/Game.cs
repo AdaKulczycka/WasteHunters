@@ -39,27 +39,27 @@
             kitchen.SetExits(bedroom, null, livingRoom, hallway);
             livingRoom.SetExits(kitchen, null, null, null);
 
-            cityCenter.SetExits(factory, beach, mall, beach);
+            cityCenter.SetExits(factory, beach, mall, hallway);
 
-            factory.SetExits(forest, pond, cityCenter, beach);
+            factory.SetExits(forest, beach, cityCenter, pond);
 
             forest.SetExits(beach, beach, factory, waterfall);
 
             waterfall.SetExits(beach, forest, pond, clearing);
 
-            clearing.SetExits(beach, beach, dumpingYard, pond);
+            clearing.SetExits(beach, waterfall, dumpingYard, beach);
 
-            pond.SetExits(waterfall, dumpingYard, null, factory);
+            pond.SetExits(waterfall, factory, null, dumpingYard);
 
-            dumpingYard.SetExits(clearing, beach, museum, pond);
+            dumpingYard.SetExits(clearing, pond, museum, beach);
 
             museum.SetExits(dumpingYard, null, school, beach);
 
             school.SetExits(museum, park, beach, beach);
 
-            park.SetExits(null, school, beach, mall);
+            park.SetExits(null, mall, beach, school);
 
-            mall.SetExits(cityCenter, park, beach, beach);
+            mall.SetExits(cityCenter, beach, beach, park);
             currentRoom = bedroom;
         }
 
