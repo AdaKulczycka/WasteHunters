@@ -21,7 +21,7 @@ public class Program
             { "Broken glass", 70 },
             { "Dirty rags", 65 },
             { "Empty aluminium cans", 60 },
-            { "Plastic bottle caps", 55 },
+            { "Bottle caps", 55 },
             { "Bubble gums", 50 },
             { "Empty can of animal food", 45 },
             { "Pair of socks with holes", 40 },
@@ -32,7 +32,32 @@ public class Program
             { "Egg shells", 15 },
             { "Rotten banana", 10 },
             { "Pet food leftovers", 10 },
-            { "Leaves on the doormat", 5 }
+            { "Torn shoelaces", 20 },
+            { "Cotton buds", 10},
+            { "Empty tube of toothpaste", 40},
+            { "Empty milk carton", 30},
+            { "Food wrappers", 35},
+            { "Wet wipes", 30},
+            { "Flip-flops", 80},
+            { "Old tent", 120},
+            { "Paper plates", 40},
+            { "Clothing", 40},
+            { "Plastic straw", 55},
+            { "Juice boxes", 40},
+            { "Exam papers", 20},
+            { "Pen", 60},
+            { "Coffee cups", 40},
+            { "Exhibit map", 20},
+            { "Broken sunglasses", 50},
+            { "Sand toy", 50},
+            { "Beach ball", 45},
+            { "Sunscreen bottles", 40},
+            { "Popped inflatable rafts", 70},
+            { "Abandoned beach towels", 40},
+            { "Cables", 100},
+            { "Polystyrene", 180},
+            { "Metal cleaning acid", 120}
+
         };
     }
 }
