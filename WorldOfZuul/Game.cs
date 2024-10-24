@@ -12,24 +12,55 @@
 
         private void CreateRooms()
         {
-  
-            Room? outside = new("Outside", "You are standing outside the main entrance of the university. To the east is a large building, to the south is a computing lab, and to the west is the campus pub.");
-            Room? theatre = new("Theatre", "You find yourself inside a large lecture theatre. Rows of seats ascend up to the back, and there's a podium at the front. It's quite dark and quiet.");
-            Room? pub = new("Pub", "You've entered the campus pub. It's a cozy place, with a few students chatting over drinks. There's a bar near you and some pool tables at the far end.");
-            Room? lab = new("Lab", "You're in a computing lab. Desks with computers line the walls, and there's an office to the east. The hum of machines fills the room.");
-            Room? office = new("Office", "You've entered what seems to be an administration office. There's a large desk with a computer on it, and some bookshelves lining one wall.");
+            Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......");
+            Room? bathroom = new("Bathroom", "You are in the bathroom");
+            Room? bedroom = new("Bedroom", "You are in the bedroom");
+            Room? kitchen = new("Kitchen", "You are in the kitchen");
+            Room? livingRoom = new("livingRoom", "You are in the livingRoom");
 
-            outside.SetExits(null, theatre, lab, pub); // North, East, South, West
+            Room? cityCenter = new("City center", "You've entered a city center");
+            Room? factory = new("Factory", "You've entered a factory.");
+            Room? mall = new("Mall", "You've entered a mall.");
+            Room? park = new("Park", "You've entered a park.");
+            Room? forest = new("Forest", "You've entered a forest");
+            Room? waterfall = new("Waterfall", "You've entered a waterfall");
+            Room? clearing = new("Clearing", "You've entered a clearing");
+            Room? pond = new("Pond", "You've entered a pond");
+            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard.");
+            Room? school = new("School", "You've entered a school yard");
+            Room? museum = new("Museum", "You've entered a museum");
+            Room? beach = new("Beach", "You've entered a beach");
 
-            theatre.SetExit("west", outside);
 
-            pub.SetExit("east", outside);
 
-            lab.SetExits(outside, office, null, null);
+            hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
+            bathroom.SetExits(null, bedroom, hallway, null);
+            bedroom.SetExits(null, null, kitchen, bathroom);
+            kitchen.SetExits(bedroom, null, livingRoom, hallway);
+            livingRoom.SetExits(kitchen, null, null, null);
 
-            office.SetExit("west", lab);
+            cityCenter.SetExits(factory, beach, mall, beach);
 
-            currentRoom = outside;
+            factory.SetExits(forest, pond, cityCenter, beach);
+
+            forest.SetExits(beach, beach, factory, waterfall);
+
+            waterfall.SetExits(beach, forest, pond, clearing);
+
+            clearing.SetExits(beach, beach, dumpingYard, pond);
+
+            pond.SetExits(waterfall, dumpingYard, null, factory);
+
+            dumpingYard.SetExits(clearing, beach, museum, pond);
+
+            museum.SetExits(dumpingYard, null, school, beach);
+
+            school.SetExits(museum, park, beach, beach);
+
+            park.SetExits(null, school, beach, mall);
+
+            mall.SetExits(cityCenter, park, beach, beach);
+            currentRoom = bedroom;
         }
 
         public void Play()
@@ -72,7 +103,7 @@
                         else
                             currentRoom = previousRoom;
                         break;
-
+                    
                     case "north":
                     case "south":
                     case "east":
