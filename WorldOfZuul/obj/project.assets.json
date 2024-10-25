@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/davidskorepa/.nuget/packages/": {}
+    "C:\\Users\\Vlad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
+      "projectUniqueName": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
       "projectName": "WorldOfZuul",
-      "projectPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
-      "packagesPath": "/Users/davidskorepa/.nuget/packages/",
-      "outputPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/",
+      "projectPath": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
+      "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/davidskorepa/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,26 +61,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,7 +8,7 @@ namespace WorldOfZuul
         private Room? previousRoom;
         private Inventory inventory;
 
-        private string trash;
+        public string trash;
 
 
 
@@ -132,12 +132,20 @@ namespace WorldOfZuul
                             Move("east");
                         }
                         break;
+                    
                     case "trash":
                         Console.WriteLine(trash);
                         break;
 
                     case "take":
-                        TakeItem(command.Name, 0);
+                        if (!string.IsNullOrEmpty(command.SecondWord))
+                        {
+                            TakeItem(command.SecondWord);
+                        }
+                        break;
+
+                    case "inventory":
+                        inventory.ShowInventory();
                         break;
 
                     default:
@@ -162,9 +170,10 @@ namespace WorldOfZuul
             }
         }
 
-        private void TakeItem(string itemName, int value)
+        private void TakeItem(string itemName)
         {
             inventory.AddItem(itemName, 0);
+            //currentRoom.Trash.Remove(Rubbish.RubbishByLocation[currentRoom.Trash.IndexOf(currentRoom.)]);
         }
         private static void PrintWelcome()
         {
