@@ -1,11 +1,10 @@
-using WorldOfZuul;
 using System.Collections.Generic;
 
-public class Rubbish
+namespace WorldOfZuul
 {
-    public static void Main(string[] args)
+    public static class Rubbish
     {
-       Dictionary<string, List<string>> rubbishByLocation = new Dictionary<string, List<string>>()
+        public static Dictionary<string, List<string>> RubbishByLocation { get; } = new Dictionary<string, List<string>>
         {
             { "Bathroom", new List<string> { "cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper" } },
             { "Kitchen", new List<string> { "egg shells", "rotten banana", "empty milk carton", "empty glass jar of pesto", "empty can of animal food" } },
@@ -20,7 +19,7 @@ public class Rubbish
             { "Waterfall", new List<string> { "wet wipes", "cans", "flip-flops" } },
             { "Clearing", new List<string> { "old tent", "broken glass", "paper plates" } },
             { "Pond", new List<string> { "empty aluminium cans", "plastic straw", "fishing nets" } },
-            { "Dumping yard/recycling yard", new List<string> { } },  // Empty list for dumping yard
+            { "Dumping yard/recycling yard", new List<string>() },
             { "School", new List<string> { "juice boxes", "exam papers", "pen" } },
             { "Museum", new List<string> { "coffee cups", "exhibit maps", "cans" } },
             { "Beach", new List<string> { "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" } }

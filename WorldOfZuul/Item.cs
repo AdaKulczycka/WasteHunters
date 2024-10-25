@@ -8,7 +8,7 @@ namespace WorldOfZuul{
 
         public void AddItem(string itemName, int value)
         {
-            items.Add(itemName, value);
+            items?.Add(itemName, value);
         }
     }
     /*private Dictionary<string, int> items;

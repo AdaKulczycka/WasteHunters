@@ -43,18 +43,18 @@ C:/Users/Vlad/WasteHunters/WorldOfZuul/obj/Debug/net6.0/ref/WorldOfZuul.dll
 /Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.pdb
 /Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.genruntimeconfig.cache
 /Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/obj/Debug/net6.0/ref/WorldOfZuul.dll
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.AssemblyInfoInputs.cache
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.AssemblyInfo.cs
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.csproj.CoreCompileInputs.cache
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.sourcelink.json
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.dll
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\refint\WorldOfZuul.dll
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.pdb
-C:\Users\Vlad\WasteHunters\WorldOfZuul\bin\Debug\net6.0\WorldOfZuul.exe
-C:\Users\Vlad\WasteHunters\WorldOfZuul\bin\Debug\net6.0\WorldOfZuul.deps.json
-C:\Users\Vlad\WasteHunters\WorldOfZuul\bin\Debug\net6.0\WorldOfZuul.runtimeconfig.json
-C:\Users\Vlad\WasteHunters\WorldOfZuul\bin\Debug\net6.0\WorldOfZuul.dll
-C:\Users\Vlad\WasteHunters\WorldOfZuul\bin\Debug\net6.0\WorldOfZuul.pdb
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\WorldOfZuul.genruntimeconfig.cache
-C:\Users\Vlad\WasteHunters\WorldOfZuul\obj\Debug\net6.0\ref\WorldOfZuul.dll
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/bin/Debug/net6.0/WorldOfZuul
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/bin/Debug/net6.0/WorldOfZuul.deps.json
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/bin/Debug/net6.0/WorldOfZuul.runtimeconfig.json
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/bin/Debug/net6.0/WorldOfZuul.dll
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/bin/Debug/net6.0/WorldOfZuul.pdb
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.GeneratedMSBuildEditorConfig.editorconfig
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.AssemblyInfoInputs.cache
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.AssemblyInfo.cs
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.csproj.CoreCompileInputs.cache
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.sourcelink.json
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.dll
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/refint/WorldOfZuul.dll
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.pdb
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/WorldOfZuul.genruntimeconfig.cache
+/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/vladStuff/WasteHunters/WorldOfZuul/obj/Debug/net6.0/ref/WorldOfZuul.dll

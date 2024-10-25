@@ -80,7 +80,7 @@ namespace WorldOfZuul
 {
     public class Program
     {
-        public static void Main()
+        public static void Main(string[] args) //--> if problem mby remove 'string[] args'
         {
             Game game = new();
             game.Play();
