@@ -1,7 +1,7 @@
 using WorldOfZuul;
 using System.Collections.Generic;
 
-public class Program
+public class Rubbish
 {
     public static void Main(string[] args)
     {
