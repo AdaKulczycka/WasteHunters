@@ -24,24 +24,24 @@ namespace WorldOfZuul
             // currentRoom = bathroom;
             // trash = new List<string>{currentRoom.Trash[random.Next(0, currentRoom.Trash.Count())]};
 
-            Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......", new List<string>{"pet food leftovers", "shattered glass", "old torn shoelaces"});
-            Room? bathroom = new("Bathroom", "You are in the bathroom", new List<string>{ "cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper" });
-            Room? bedroom = new("Bedroom", "You are in the bedroom" ,new List<string>{ "pair of socks with holes", "candy wrapper", "not working computer mouse", "used batteries" });
-            Room? kitchen = new("Kitchen", "You are in the kitchen" ,new List<string>{ "egg shells", "rotten banana", "empty milk carton", "empty glass jar of pesto", "empty can of animal food" });
-            Room? livingRoom = new("Living room", "You are in the living room" ,new List<string>{ "tv", "pizza box", "tissue" });
+            Room? hallway = new("Hallway", "You are standing in the hallway of your little cozy home.\n To the north you see your bathroom.\n To the east you can exit your house to the City Center.\n To the south there is... nothing.\n To the west you see your kitchen.", new List<string>{"pet food leftovers", "shattered glass", "old torn shoelaces"});
+            Room? bathroom = new("Bathroom", "You are in the bathroom.\n To the north there is... nothing.\n To the east there is... nothing.\n To the south you see your hallway.\n To the west you can see your bedroom.", new List<string>{ "cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper" });
+            Room? bedroom = new("Bedroom", "You are in the bedroom.\n To the north there is... nothing.\n To the east you see your bathroom.\n To the south you see your kitchen.\n To the west there is... nothing." ,new List<string>{ "pair of socks with holes", "candy wrapper", "not working computer mouse", "used batteries" });
+            Room? kitchen = new("Kitchen", "You are in the kitchen.\n To the north you see your bedroom.\n To the east you see your hallway.\n To the south you see your living room.\n To the west there is... nothing." ,new List<string>{ "egg shells", "rotten banana", "empty milk carton", "empty glass jar of pesto", "empty can of animal food" });
+            Room? livingRoom = new("Living room", "You are in the living room.\n To the north you see your kitchen.\n To the east there is... nothing.\n To the south there is... nothing.\n To the west there is... nothing." ,new List<string>{ "tv", "pizza box", "tissue" });
 
-            Room? cityCenter = new("City center", "You've entered a city center" ,new List<string>{ "cigarette butts", "empty aluminium cans", "receipts and paper scraps" });
-            Room? factory = new("Factory", "You've entered a factory." ,new List<string>{ "cables", "polystyrene", "metal cleaning acid" });
-            Room? mall = new("Mall", "You've entered a mall." ,new List<string>{ "plastic bottles", "food wrappers", "plastic wraps and boxes" });
-            Room? park = new("Park", "You've entered a park." ,new List<string>{ "bubble gums", "bottle caps", "broken glass" });
-            Room? forest = new("Forest", "You've entered a forest" ,new List<string>{ "tires", "bottle caps", "plastic bottles" });
-            Room? waterfall = new("Waterfall", "You've entered a waterfall" ,new List<string>{ "wet wipes", "cans", "flip-flops" });
-            Room? clearing = new("Clearing", "You've entered a clearing" ,new List<string>{ "old tent", "broken glass", "paper plates" });
-            Room? pond = new("Pond", "You've entered a pond" ,new List<string>{ "empty aluminium cans", "plastic straw", "fishing nets" });
-            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard." ,new List<string>{"Nothing to see here"}); //Implement except this location, there is nothing to pick up here
-            Room? school = new("School", "You've entered a school" /*yard?*/ ,new List<string>{ "juice boxes", "exam papers", "pen" });
-            Room? museum = new("Museum", "You've entered a museum" ,new List<string>{ "coffee cups", "exhibit maps", "cans" });
-            Room? beach = new("Beach", "You've entered a beach" ,new List<string>{ "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" });
+            Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "cigarette butts", "empty aluminium cans", "receipts and paper scraps" });
+            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "cables", "polystyrene", "metal cleaning acid" });
+            Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "plastic bottles", "food wrappers", "plastic wraps and boxes" });
+            Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "bubble gums", "bottle caps", "broken glass" });
+            Room? forest = new("Forest", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "tires", "bottle caps", "plastic bottles" });
+            Room? waterfall = new("Waterfall", "You've entered a waterfall.\n To the north you see a beach.\n To the east you see a forest.\n To the south you see a pond.\n To the west you see a dumping yard." ,new List<string>{ "wet wipes", "cans", "flip-flops" });
+            Room? clearing = new("Clearing", "You've entered a clearing.\n To the north you see a beach.\n To the east you see a waterfall.\n To the south you see a dumping yard.\n To the west you see a beach." ,new List<string>{ "old tent", "broken glass", "paper plates" });
+            Room? pond = new("Pond", "You've entered a pond.\n To the north you see a waterfall.\n To the east you see a factory.\n To the south  you see... nothing.\n To the west you see a dumping yard." ,new List<string>{ "empty aluminium cans", "plastic straw", "fishing nets" });
+            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard.\n To the north you see a clearing.\n To the east you see a pond.\n To the south you see a museum.\n To the west you see a beach." ,new List<string>{"Nothing to see here"}); //Implement except this location, there is nothing to pick up here
+            Room? school = new("School", "You've entered a school.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." /*yard?*/ ,new List<string>{ "juice boxes", "exam papers", "pen" });
+            Room? museum = new("Museum", "You've entered a museum.\n To the north you see a dumping yard.\n To the east you see... nothing.\n To the south you see a school.\n To the west you see a beach." ,new List<string>{ "coffee cups", "exhibit maps", "cans" });
+            Room? beach = new("Beach", "You've entered a beach." ,new List<string>{ "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" });
 
 
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
