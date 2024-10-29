@@ -19,7 +19,7 @@ namespace WorldOfZuul
             { "Waterfall", new List<string> { "wet wipes", "cans", "flip-flops" } },
             { "Clearing", new List<string> { "old tent", "broken glass", "paper plates" } },
             { "Pond", new List<string> { "empty aluminium cans", "plastic straw", "fishing nets" } },
-            { "Dumping yard/recycling yard", new List<string>() },
+            { "Recycling yard", new List<string>() },
             { "School", new List<string> { "juice boxes", "exam papers", "pen" } },
             { "Museum", new List<string> { "coffee cups", "exhibit maps", "cans" } },
             { "Beach", new List<string> { "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" } }
