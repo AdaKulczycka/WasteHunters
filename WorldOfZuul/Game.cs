@@ -1,4 +1,6 @@
-﻿using System.Transactions;
+// using System.Transactions;
+
+using System.Security.Cryptography.X509Certificates;
 
 namespace WorldOfZuul
 {
@@ -7,39 +9,39 @@ namespace WorldOfZuul
         private Room? currentRoom;
         private Room? previousRoom;
         private Inventory inventory;
-
-        public string trash;
-
-
-
+        Random random = new Random();
         public Game()
         {
             inventory = new Inventory();
-            trash = Rubbish.RubbishByLocation["Bathroom"][0];
+
             CreateRooms();
         }
 
         private void CreateRooms()
         {
-            Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......", trash);
-            Room? bathroom = new("Bathroom", "You are in the bathroom","");
-            Room? bedroom = new("Bedroom", "You are in the bedroom" ,"");
-            Room? kitchen = new("Kitchen", "You are in the kitchen" ,"");
-            Room? livingRoom = new("livingRoom", "You are in the livingRoom" ,"");
+            // Room? bathroom = new("Bathroom", "You are in the bathroom", new List<string>{"cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper"});
+            // Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......", new List<string>{"pet food leftovers", "shattered glass", "old torn shoelaces"});
+            // currentRoom = bathroom;
+            // trash = new List<string>{currentRoom.Trash[random.Next(0, currentRoom.Trash.Count())]};
 
-            Room? cityCenter = new("City center", "You've entered a city center" ,"");
-            Room? factory = new("Factory", "You've entered a factory." ,"");
-            Room? mall = new("Mall", "You've entered a mall." ,"");
-            Room? park = new("Park", "You've entered a park." ,"");
-            Room? forest = new("Forest", "You've entered a forest" ,"");
-            Room? waterfall = new("Waterfall", "You've entered a waterfall" ,"");
-            Room? clearing = new("Clearing", "You've entered a clearing" ,"");
-            Room? pond = new("Pond", "You've entered a pond" ,"");
-            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard." ,"");
-            Room? school = new("School", "You've entered a school yard" ,"");
-            Room? museum = new("Museum", "You've entered a museum" ,"");
-            Room? beach = new("Beach", "You've entered a beach" ,"");
+            Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......", new List<string>{"pet food leftovers", "shattered glass", "old torn shoelaces"});
+            Room? bathroom = new("Bathroom", "You are in the bathroom", new List<string>{ "cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper" });
+            Room? bedroom = new("Bedroom", "You are in the bedroom" ,new List<string>{ "pair of socks with holes", "candy wrapper", "not working computer mouse", "used batteries" });
+            Room? kitchen = new("Kitchen", "You are in the kitchen" ,new List<string>{ "egg shells", "rotten banana", "empty milk carton", "empty glass jar of pesto", "empty can of animal food" });
+            Room? livingRoom = new("Living room", "You are in the living room" ,new List<string>{ "tv", "pizza box", "tissue" });
 
+            Room? cityCenter = new("City center", "You've entered a city center" ,new List<string>{ "cigarette butts", "empty aluminium cans", "receipts and paper scraps" });
+            Room? factory = new("Factory", "You've entered a factory." ,new List<string>{ "cables", "polystyrene", "metal cleaning acid" });
+            Room? mall = new("Mall", "You've entered a mall." ,new List<string>{ "plastic bottles", "food wrappers", "plastic wraps and boxes" });
+            Room? park = new("Park", "You've entered a park." ,new List<string>{ "bubble gums", "bottle caps", "broken glass" });
+            Room? forest = new("Forest", "You've entered a forest" ,new List<string>{ "tires", "bottle caps", "plastic bottles" });
+            Room? waterfall = new("Waterfall", "You've entered a waterfall" ,new List<string>{ "wet wipes", "cans", "flip-flops" });
+            Room? clearing = new("Clearing", "You've entered a clearing" ,new List<string>{ "old tent", "broken glass", "paper plates" });
+            Room? pond = new("Pond", "You've entered a pond" ,new List<string>{ "empty aluminium cans", "plastic straw", "fishing nets" });
+            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard." ,new List<string>{"Nothing to see here"}); //Implement except this location, there is nothing to pick up here
+            Room? school = new("School", "You've entered a school" /*yard?*/ ,new List<string>{ "juice boxes", "exam papers", "pen" });
+            Room? museum = new("Museum", "You've entered a museum" ,new List<string>{ "coffee cups", "exhibit maps", "cans" });
+            Room? beach = new("Beach", "You've entered a beach" ,new List<string>{ "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" });
 
 
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
@@ -73,6 +75,7 @@ namespace WorldOfZuul
         }
         public void Play()
         {
+            String currentTrash;
             Parser parser = new();
 
             PrintWelcome();
@@ -128,24 +131,24 @@ namespace WorldOfZuul
                         break;
 
                     case "out":
-                        if (currentRoom?.ShortDescription == "Hallway" ){
+                        if (currentRoom?.ShortDescription == "Hallway" )
+                        {
                             Move("east");
                         }
                         break;
-                    
                     case "trash":
-                        Console.WriteLine(trash);
-                        break;
-
-                    case "take":
-                        if (!string.IsNullOrEmpty(command.SecondWord))
+                        currentTrash = string.Join(", ", currentRoom?.Garbage[random.Next(0, currentRoom.Garbage.Count())]);
+                        Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
+                        if (Console.ReadLine()  == "take")
                         {
-                            TakeItem(command.SecondWord);
+                            // pickup-currentTrash
+                            Console.WriteLine($"You picked up {currentTrash}");
+                            currentRoom?.Garbage.Remove(currentTrash);
                         }
                         break;
+                    case "take":
+                        TakeItem(command.Name, 0);
 
-                    case "inventory":
-                        inventory.ShowInventory();
                         break;
 
                     default:
@@ -170,10 +173,9 @@ namespace WorldOfZuul
             }
         }
 
-        private void TakeItem(string itemName)
+        private void TakeItem(string itemName, int value)
         {
             inventory.AddItem(itemName, 0);
-            //currentRoom.Trash.Remove(Rubbish.RubbishByLocation[currentRoom.Trash.IndexOf(currentRoom.)]);
         }
         private static void PrintWelcome()
         {
