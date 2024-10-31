@@ -25,6 +25,7 @@ namespace WasteHunters{
                 Console.WriteLine($"- {item.Key}: {item.Value} points");
             }
         }
+
     }
     /*private Dictionary<string, int> items;
 
