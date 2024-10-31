@@ -31,7 +31,7 @@ namespace WorldOfZuul
             { "Egg shells", 15 },
             { "Rotten banana", 10 },
             { "Pet food leftovers", 10 },
-            { "Torn shoelaces", 20 },
+            { "Old torn shoelaces", 20 },
             { "Cotton buds", 10 },
             { "Empty tube of toothpaste", 40 },
             { "Empty milk carton", 30 },
@@ -55,7 +55,10 @@ namespace WorldOfZuul
             { "Abandoned beach towels", 40 },
             { "Cables", 100 },
             { "Polystyrene", 180 },
-            { "Metal cleaning acid", 120 }
+            { "Metal cleaning acid", 120 },
+            { "TV", 200},
+            { "Pizza box", 20},
+            { "Used tissue", 5}
         };
     }
 }
