@@ -182,14 +182,21 @@ namespace WasteHunters
                         }
                         break;
                     case "trash":
-                        currentTrash = string.Join(", ", currentRoom?.Garbage[random.Next(0, currentRoom.Garbage.Count())]);
-                        Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
-                        if (Console.ReadLine()  == "take")
+                        if (currentRoom?.Garbage.Count() != 0)
                         {
-                            // pickup-currentTrash
-                            TakeItem(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
-                            Console.WriteLine($"You picked up {currentTrash}");
-                            currentRoom?.Garbage.Remove(currentTrash);
+                            currentTrash = string.Join(", ", currentRoom?.Garbage[random.Next(0, currentRoom.Garbage.Count())]);
+                            Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
+                            if (Console.ReadLine()  == "take")
+                            {
+                                // pickup-currentTrash
+                                TakeItem(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                Console.WriteLine($"You picked up {currentTrash}");
+                                currentRoom?.Garbage.Remove(currentTrash);
+                            }
+                        }
+                        else 
+                        {
+                            Console.WriteLine("This room is does not have any trash left.");
                         }
                         break;
 
