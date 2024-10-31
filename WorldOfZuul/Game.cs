@@ -10,6 +10,7 @@ namespace WorldOfZuul
         private Room? previousRoom;
         private Inventory inventory;
         Random random = new Random();
+        public List<string>? beachTrash;
         public Game()
         {
             inventory = new Inventory();
@@ -42,25 +43,26 @@ namespace WorldOfZuul
             Room? school = new("School", "You've entered a school.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." /*yard?*/ ,new List<string>{ "Juice boxes", "Exam papers", "Pen" });
             Room? museum = new("Museum", "You've entered a museum.\n To the north you see a dumping yard.\n To the east you see... nothing.\n To the south you see a school.\n To the west you see a beach." ,new List<string>{ "Coffee cups", "Exhibit map", "Empty aluminium cans" });
             // Need to update the long description of all the beaches below
-            Room? beachNorth1 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachNorth2 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachNorth3 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachEast1 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachEast2 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachEast3 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachEast4 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachSouth1 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachSouth2 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachSouth3 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachWest1 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachWest2 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachWest3 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachWest4 = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
+            beachTrash = new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" };
+            Room? beachNorth1 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachNorth2 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachNorth3 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachEast1 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachEast2 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachEast3 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachEast4 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachSouth1 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachSouth2 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachSouth3 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachWest1 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachWest2 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachWest3 = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachWest4 = new("Beach", "You've entered a beach." ,beachTrash);
            
-            Room? beachNorthEast = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachSouthEast = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachSouthWest = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
-            Room? beachNorthWest = new("Beach", "You've entered a beach." ,new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" });
+            Room? beachNorthEast = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachSouthEast = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachSouthWest = new("Beach", "You've entered a beach." ,beachTrash);
+            Room? beachNorthWest = new("Beach", "You've entered a beach." ,beachTrash);
 
 
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
