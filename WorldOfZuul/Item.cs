@@ -1,5 +1,7 @@
 namespace WasteHunters{
     public class Inventory{
+        int sum = 0; 
+
         private Dictionary<string, int>? items;
         public Inventory()
         {
@@ -9,6 +11,7 @@ namespace WasteHunters{
         public void AddItem(string itemName, int value)
         {
             items?.Add(itemName, value);
+            sum += value;
         }
 
         public void ShowInventory()
@@ -24,6 +27,7 @@ namespace WasteHunters{
             {
                 Console.WriteLine($"- {item.Key}: {item.Value} points");
             }
+            System.Console.WriteLine(sum);
         }
 
     }
