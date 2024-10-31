@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
+      "projectUniqueName": "C:\\Users\\Vlad\\Project1\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
       "projectName": "WorldOfZuul",
-      "projectPath": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
+      "projectPath": "C:\\Users\\Vlad\\Project1\\WasteHunters\\WorldOfZuul\\WorldOfZuul.csproj",
       "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vlad\\project\\WasteHunters\\WorldOfZuul\\obj\\",
+      "outputPath": "C:\\Users\\Vlad\\Project1\\WasteHunters\\WorldOfZuul\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",

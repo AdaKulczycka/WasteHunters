@@ -142,14 +142,20 @@ namespace WorldOfZuul
                         if (Console.ReadLine()  == "take")
                         {
                             // pickup-currentTrash
+                            TakeItem(currentTrash, 0);
                             Console.WriteLine($"You picked up {currentTrash}");
                             currentRoom?.Garbage.Remove(currentTrash);
                         }
                         break;
-                    case "take":
-                        TakeItem(command.Name, 0);
 
+                    case "inventory":
+                        inventory.ShowInventory();
                         break;
+                        
+                    // case "take":
+                    //     TakeItem(command.Name, 0);
+
+                    //     break;
 
                     default:
                         Console.WriteLine("I don't know what command.");
