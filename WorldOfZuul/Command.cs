@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldOfZuul
+namespace WasteHunters
 {
     public class Command
     {

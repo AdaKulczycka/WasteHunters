@@ -1,4 +1,4 @@
-namespace WorldOfZuul
+namespace WasteHunters
 {
     public class Room
     {

@@ -1,4 +1,4 @@
-namespace WorldOfZuul{
+namespace WasteHunters{
     public class Inventory{
         private Dictionary<string, int>? items;
         public Inventory()

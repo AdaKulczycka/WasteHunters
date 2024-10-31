@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace WorldOfZuul
+namespace WasteHunters
 {
     public static class RubbishPrices
     {

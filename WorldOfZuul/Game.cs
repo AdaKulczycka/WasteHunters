@@ -2,7 +2,7 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-namespace WorldOfZuul
+namespace WasteHunters
 {
     public class Game
     {
@@ -195,6 +195,10 @@ namespace WorldOfZuul
                         inventory.ShowInventory();
                         break;
 
+                    case "map":
+                        PrintMap();
+                        break;
+
                     // case "take":
                     //     TakeItem(command.Name, 0);
 
@@ -226,10 +230,32 @@ namespace WorldOfZuul
         {
             inventory.AddItem(itemName, 0);
         }
+
+        public void PrintMap()
+        {
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║    BEACH     ║║    BEACH     ║║    BEACH     ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║   CLEARING   ║║  WATERFALL   ║║    FOREST    ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║ DUMPING YARD ║║     POND     ║║    FACTORY   ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║    MUSEUM    ║║   KITCHEN    ║║   HALLWAY    ║║  CITY CENTER ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║    SCHOOL    ║║     PARK     ║║     MALL     ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+            Console.WriteLine("         ╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗╔══════════════╗");
+            Console.WriteLine("         ║    BEACH     ║║    BEACH     ║║    BEACH     ║║    BEACH     ║║    BEACH     ║");
+            Console.WriteLine("         ╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝╚══════════════╝");
+        }
         private static void PrintWelcome()
         {
-            Console.WriteLine("Welcome to the World of Zuul!");
-            Console.WriteLine("World of Zuul is a new, incredibly boring adventure game.");
+            Console.WriteLine("Welcome to the Waste Hunters game!");
+            Console.WriteLine("It is an interactive and educational game based on the 12th SDG. \n(sustainable consumption and production patterns)\n");
             PrintHelp();
             Console.WriteLine();
         }
@@ -237,7 +263,7 @@ namespace WorldOfZuul
         private static void PrintHelp()
         {
             Console.WriteLine("You are lost. You are alone. You wander");
-            Console.WriteLine("around the university.");
+            Console.WriteLine("around the city.");
             Console.WriteLine();
             Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
             Console.WriteLine("Type 'look' for more details.");
@@ -245,7 +271,8 @@ namespace WorldOfZuul
             Console.WriteLine("Type 'help' to print this message again.");
             Console.WriteLine("Type 'quit' to exit the game.");
             Console.WriteLine("Type 'trash' to show the trash in the current room");
-
+            Console.WriteLine("Type 'take' to pick up the trash in the room");
+            Console.WriteLine("Type 'inventory' to show the inventory");
         }
     }
 }

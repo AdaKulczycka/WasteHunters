@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldOfZuul
+namespace WasteHunters
 {
     public class CommandWords
     {
-        public List<string> ValidCommands { get; } = new List<string> { "north", "east", "south", "west", "look", "back", "quit", "out", "help", "take", "trash", "inventory"};
+        public List<string> ValidCommands { get; } = new List<string> { "north", "east", "south", "west", "look", "back", "quit", "out", "help", "take", "trash", "inventory", "map"};
 
         public bool IsValidCommand(string command)
         {
