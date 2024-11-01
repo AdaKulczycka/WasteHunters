@@ -20,17 +20,13 @@ namespace WasteHunters
 
         private void CreateRooms()
         {
-            // Room? bathroom = new("Bathroom", "You are in the bathroom", new List<string>{"cotton buds", "used razor blades", "empty tube of toothpaste", "empty roll of toilet paper"});
-            // Room? hallway = new("Hallway", "You are staying in the hallway of your little cozy home. To the ......", new List<string>{"pet food leftovers", "shattered glass", "old torn shoelaces"});
-            // currentRoom = bathroom;
-            // trash = new List<string>{currentRoom.Trash[random.Next(0, currentRoom.Trash.Count())]};
-
              Room? hallway = new("Hallway", "You are standing in the hallway of your little cozy home.\n To the north you see your bathroom.\n To the east you can exit your house to the City Center.\n To the south there is... nothing.\n To the west you see your kitchen.", new List<string>{"Pet food leftovers", "Shattered glass", "Old torn shoelaces"});
             Room? bathroom = new("Bathroom", "You are in the bathroom.\n To the north there is... nothing.\n To the east there is... nothing.\n To the south you see your hallway.\n To the west you can see your bedroom.", new List<string>{ "Cotton buds", "Used razor blades", "Empty tube of toothpaste", "Empty roll of toilet paper" });
             Room? bedroom = new("Bedroom", "You are in the bedroom.\n To the north there is... nothing.\n To the east you see your bathroom.\n To the south you see your kitchen.\n To the west there is... nothing." ,new List<string>{ "Pair of socks with holes", "Candy wrapper", "Not working computer mouse", "Used batteries" });
             Room? kitchen = new("Kitchen", "You are in the kitchen.\n To the north you see your bedroom.\n To the east you see your hallway.\n To the south you see your living room.\n To the west there is... nothing." ,new List<string>{ "Egg shells", "Rotten banana", "Empty milk carton", "Empty glass jar of pesto", "Empty can of animal food" });
             Room? livingRoom = new("Living room", "You are in the living room.\n To the north you see your kitchen.\n To the east there is... nothing.\n To the south there is... nothing.\n To the west there is... nothing." ,new List<string>{ "TV", "Pizza box", "Used tissue" });
-
+            // restaurant instead of museum
+            // store instead of school
             Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "Cigarette butts", "Empty aluminium cans", "Receipts and paper scraps" });
             Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "Cables", "Polystyrene", "Metal cleaning acid" });
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
@@ -40,8 +36,8 @@ namespace WasteHunters
             Room? clearing = new("Clearing", "You've entered a clearing.\n To the north you see a beach.\n To the east you see a waterfall.\n To the south you see a dumping yard.\n To the west you see a beach." ,new List<string>{ "Old tent", "Broken glass", "Paper plates" });
             Room? pond = new("Pond", "You've entered a pond.\n To the north you see a waterfall.\n To the east you see a factory.\n To the south  you see... nothing.\n To the west you see a dumping yard." ,new List<string>{ "Empty aluminium cans", "Plastic straw", "Fishing nets" });
             Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard.\n To the north you see a clearing.\n To the east you see a pond.\n To the south you see a museum.\n To the west you see a beach." ,new List<string>{"Nothing to see here"}); //Implement except this location, there is nothing to pick up here
-            Room? school = new("School", "You've entered a school.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." /*yard?*/ ,new List<string>{ "Juice boxes", "Exam papers", "Pen" });
-            Room? museum = new("Museum", "You've entered a museum.\n To the north you see a dumping yard.\n To the east you see... nothing.\n To the south you see a school.\n To the west you see a beach." ,new List<string>{ "Coffee cups", "Exhibit map", "Empty aluminium cans" });
+            Room? groceryStore = new("Grocery store", "You've entered a grocery store.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." /*yard?*/ ,new List<string>{ "Juice boxes", "Plastic bags", "Snack packaging" });
+            Room? restaurant = new("Restaurant", "You've entered a restaurant.\n To the north you see a dumping yard.\n To the east you see... nothing.\n To the south you see a grocery store.\n To the west you see a beach." ,new List<string>{ "Food leftovers", "Glass bottles", "Empty aluminium cans" });
             // Need to update the long description of all the beaches below
             beachTrash = new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" };
             Room? beachNorth1 = new("Beach", "You've entered a beach." ,beachTrash);
@@ -83,13 +79,13 @@ namespace WasteHunters
 
             pond.SetExits(waterfall, factory, null, dumpingYard);
 
-            dumpingYard.SetExits(clearing, pond, museum, beachWest2);
+            dumpingYard.SetExits(clearing, pond, restaurant, beachWest2);
 
-            museum.SetExits(dumpingYard, null, school, beachWest3);
+            restaurant.SetExits(dumpingYard, null, groceryStore, beachWest3);
 
-            school.SetExits(museum, park, beachWest4, beachSouth1);
+            groceryStore.SetExits(restaurant, park, beachWest4, beachSouth1);
 
-            park.SetExits(null, mall, beachSouth2, school);
+            park.SetExits(null, mall, beachSouth2, groceryStore);
 
             mall.SetExits(cityCenter, beachEast4, beachSouth3, park);
 
@@ -102,14 +98,14 @@ namespace WasteHunters
             beachEast3.SetExits(beachEast2, null, beachEast4, cityCenter);
             beachEast4.SetExits(beachEast3, null, beachSouthEast, mall);
 
-            beachSouth1.SetExits(school, beachSouth2, null, beachSouthWest);
+            beachSouth1.SetExits(groceryStore, beachSouth2, null, beachSouthWest);
             beachSouth2.SetExits(park, beachSouth3, null, beachSouth1);
             beachSouth3.SetExits(mall, beachSouthEast, null, beachSouth2);
 
             beachWest1.SetExits(beachNorthWest, clearing, beachWest2, null);
             beachWest2.SetExits(beachWest1, dumpingYard, beachWest3, null);
-            beachWest3.SetExits(beachWest2, museum, beachWest4, null);
-            beachWest4.SetExits(beachWest3, school, beachSouthWest, null);
+            beachWest3.SetExits(beachWest2, restaurant, beachWest4, null);
+            beachWest4.SetExits(beachWest3, groceryStore, beachSouthWest, null);
 
             beachNorthWest.SetExits(null, beachNorth1, beachWest1, null);
             beachNorthEast.SetExits(null, null, beachEast1, beachNorth3);
@@ -208,11 +204,6 @@ namespace WasteHunters
                         PrintMap();
                         break;
 
-                    // case "take":
-                    //     TakeItem(command.Name, 0);
-
-                    //     break;
-
                     default:
                         Console.WriteLine("I don't know what command.");
                         break;
@@ -285,3 +276,16 @@ namespace WasteHunters
         }
     }
 }
+
+// ADD INVENTORY SECTIONS : PLASTICS, HAZARDOUS, PAPER
+// MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
+// dicr1
+// {
+//     dict1
+//     {
+//         {plastic shit, 2312}
+//     }
+//     2
+//     3
+//     4
+// }
