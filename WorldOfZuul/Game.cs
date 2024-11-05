@@ -233,8 +233,9 @@ namespace WasteHunters
 
         public void PrintMap()
         {
-            Console.WriteLine("         ╔═══════╗     ╔═══════╗            ╔═══════╗            ╔═══════╗      ╔═══════╗");
-            Console.WriteLine("         ║ BEACH ║═════║ BEACH ║════════════║ BEACH ║════════════║ BEACH ║══════║ BEACH ║");
+            Console.WriteLine("         ╔═══════╗    ╔═══════╗             ╔═══════╗             ╔═══════╗     ╔═══════╗");
+            Console.WriteLine("         ║ BEACH ║════║ BEACH ║═════════════║ BEACH ║═════════════║ BEACH ║═════║ BEACH ║");
+            Console.WriteLine("         ╚═══║═══╝    ╚═══║═══╝             ╚═══║═══╝             ╚═══║═══╝     ╚═══║═══╝");
             Console.WriteLine("         ╔═══║═══╗ ╔══════║═══════╗      ╔══════║═══════╗      ╔══════║═══════╗ ╔═══║═══╗");
             Console.WriteLine("         ║ BEACH ║═║   CLEARING   ║══════║   WATERFALL  ║══════║    FOREST    ║═║ BEACH ║");
             Console.WriteLine("         ╚═══║═══╝ ╚══════║═══════╝      ╚══════║═══════╝      ╚══════║═══════╝ ╚═══║═══╝");
@@ -249,8 +250,9 @@ namespace WasteHunters
             Console.WriteLine("         ╔═══║═══╗ ╔══════║═══════╗      ╔══════════════╗      ╔══════║═══════╗ ╔═══║═══╗");
             Console.WriteLine("         ║ BEACH ║═║ GROCERY STORE║══════║     PARK     ║══════║    MALL      ║═║ BEACH ║");
             Console.WriteLine("         ╚═══║═══╝ ╚══════║═══════╝      ╚══════║═══════╝      ╚══════║═══════╝ ╚═══║═══╝");
-            Console.WriteLine("         ║ BEACH ║═════║ BEACH ║════════════║ BEACH ║════════════║ BEACH ║══════║ BEACH ║");
-            Console.WriteLine("         ╚═══════╝     ╚═══════╝            ╚═══════╝            ╚═══════╝      ╚═══════╝");
+            Console.WriteLine("         ╔═══║═══╗    ╔═══║═══╗             ╔═══║═══╗             ╔═══║═══╗     ╔═══║═══╗");
+            Console.WriteLine("         ║ BEACH ║════║ BEACH ║═════════════║ BEACH ║═════════════║ BEACH ║═════║ BEACH ║");
+            Console.WriteLine("         ╚═══════╝    ╚═══════╝             ╚═══════╝             ╚═══════╝     ╚═══════╝");
 
          }
         private static void PrintWelcome()
