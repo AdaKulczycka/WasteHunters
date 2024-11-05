@@ -27,6 +27,7 @@ namespace WasteHunters{
             {
                 Console.WriteLine($"- {item.Key}: {item.Value} points");
             }
+            Console.WriteLine($"(Total: {sum})");
             System.Console.WriteLine(sum);
         }
 

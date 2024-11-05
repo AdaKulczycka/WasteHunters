@@ -20,8 +20,8 @@ namespace WasteHunters
             { "Clearing", new List<string> { "old tent", "broken glass", "paper plates" } },
             { "Pond", new List<string> { "empty aluminium cans", "plastic straw", "fishing nets" } },
             { "Recycling yard", new List<string>() },
-            { "School", new List<string> { "juice boxes", "exam papers", "pen" } },
-            { "Museum", new List<string> { "coffee cups", "exhibit maps", "cans" } },
+            { "Grocery store", new List<string> { "Juice boxes", "Plastic bags", "Snack packaging" } },
+            { "Restaurant", new List<string> { "Food leftovers", "Glass bottles", "Empty aluminium cans" } },
             { "Beach", new List<string> { "plastic bottles", "fishing nets", "clothing", "flip-flops", "straw", "sand toy", "beach ball", "sunscreen bottles", "popped inflatable rafts", "abandoned beach towels", "plastic wraps and boxes", "cigarette butts" } }
         };
     }

@@ -43,8 +43,8 @@ namespace WasteHunters
             { "Clothing", 40 },
             { "Plastic straw", 55 },
             { "Juice boxes", 40 },
-            { "Exam papers", 20 },
-            { "Pen", 60 },
+            { "Plastic bags", 30 },
+            { "Snack packaging", 30 },
             { "Coffee cups", 40 },
             { "Exhibit map", 20 },
             { "Broken sunglasses", 50 },
@@ -58,7 +58,9 @@ namespace WasteHunters
             { "Metal cleaning acid", 120 },
             { "TV", 200},
             { "Pizza box", 20},
-            { "Used tissue", 5}
+            { "Used tissue", 5},
+            { "Food leftovers", 10},
+            { "Glass bottles", 95}
         };
     }
 }
