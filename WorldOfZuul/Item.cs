@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-namespace WasteHunters
-{
-    public class Inventory{
-        int sum = 0; 
-
-        private Dictionary<string, int> items;
-=======
 using System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -15,7 +7,6 @@ namespace WasteHunters{
         int sum = 0; 
 
         private Dictionary<string, Dictionary<string, int>> items;
->>>>>>> 4d1d27e33b6950a3be3d215483116b03e80d9c3c
         public Inventory()
         {
              items = new Dictionary<string, Dictionary<string, int>>()
@@ -31,14 +22,6 @@ namespace WasteHunters{
             AddItemToCategory("plastic", itemName, value);
         }
 
-<<<<<<< HEAD
-        public void RemoveItem()
-        {
-            items.Clear();
-            
-        }
-
-=======
         public void AddItemToPaper(string itemName, int value)
         {
             AddItemToCategory("paper", itemName, value);
@@ -56,7 +39,6 @@ namespace WasteHunters{
         }
 
         // Method to display the contents of each category
->>>>>>> 4d1d27e33b6950a3be3d215483116b03e80d9c3c
         public void ShowInventory()
         {
             Console.WriteLine("Inventory:");
@@ -77,19 +59,11 @@ namespace WasteHunters{
                 }
             }
         }
-<<<<<<< HEAD
-
-        public bool HasItem(string itemName)
+        public void RemoveItem()
         {
-            return items.ContainsKey(itemName);
+            items.Clear();
         }
-    }
-    /*private Dictionary<string, int> items;
-
-        public Inventory()
-=======
         public void CountPoints()
->>>>>>> 4d1d27e33b6950a3be3d215483116b03e80d9c3c
         {
             foreach (var category in items.Keys)
             {
