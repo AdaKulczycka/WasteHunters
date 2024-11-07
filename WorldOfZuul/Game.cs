@@ -112,7 +112,7 @@ namespace WasteHunters
             beachSouthEast.SetExits(beachEast4, null, null, beachSouth3);
             beachSouthWest.SetExits(beachEast4, beachSouth1, null, null);
 
-            currentRoom = hallway;
+            currentRoom = bedroom;
         }
         public void Play()
         {
@@ -252,6 +252,7 @@ namespace WasteHunters
             Console.WriteLine("         ║ BEACH ║═════║ BEACH ║════════════║ BEACH ║════════════║ BEACH ║══════║ BEACH ║");
             Console.WriteLine("         ╚═══════╝     ╚═══════╝            ╚═══════╝            ╚═══════╝      ╚═══════╝");
         }
+
         private static void PrintWelcome()
         {
             Console.WriteLine("Welcome to the Waste Hunters game!");
@@ -262,8 +263,8 @@ namespace WasteHunters
 
         private static void PrintHelp()
         {
-            Console.WriteLine("You are lost. You are alone. You wander");
-            Console.WriteLine("around the city.");
+            Console.WriteLine("You woke up from a beautiful dream");
+            Console.WriteLine("in your bedroom.");
             Console.WriteLine();
             Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
             Console.WriteLine("Type 'look' for more details.");
@@ -283,7 +284,7 @@ namespace WasteHunters
 // {
 //     dict1
 //     {
-//         {plastic shit, 2312}
+//         {plastic, 2312}
 //     }
 //     2
 //     3
