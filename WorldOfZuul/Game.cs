@@ -3,6 +3,7 @@ using System.Transactions;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Formats.Asn1;
+using System.Timers;
 
 namespace WasteHunters
 {
@@ -13,6 +14,7 @@ namespace WasteHunters
         private Inventory inventory;
         Random random = new Random();
         public List<string>? beachTrash;
+        public System.Timers.Timer? myTimer = null;
         public Game()
         {
             inventory = new Inventory();
@@ -22,7 +24,7 @@ namespace WasteHunters
 
         private void CreateRooms()
         {
-             Room? hallway = new("Hallway", "You are standing in the hallway of your little cozy home.\n To the north you see your bathroom.\n To the east you can exit your house to the City Center.\n To the south there is... nothing.\n To the west you see your kitchen.", new List<string>{"Pet food leftovers", "Shattered glass", "Old torn shoelaces"});
+            Room? hallway = new("Hallway", "You are standing in the hallway of your little cozy home.\n To the north you see your bathroom.\n To the east you can exit your house to the City Center.\n To the south there is... nothing.\n To the west you see your kitchen.", new List<string>{"Pet food leftovers", "Shattered glass", "Old torn shoelaces"});
             Room? bathroom = new("Bathroom", "You are in the bathroom.\n To the north there is... nothing.\n To the east there is... nothing.\n To the south you see your hallway.\n To the west you can see your bedroom.", new List<string>{ "Cotton buds", "Used razor blades", "Empty tube of toothpaste", "Empty roll of toilet paper" });
             Room? bedroom = new("Bedroom", "You are in the bedroom.\n To the north there is... nothing.\n To the east you see your bathroom.\n To the south you see your kitchen.\n To the west there is... nothing." ,new List<string>{ "Pair of socks with holes", "Candy wrapper", "Not working computer mouse", "Used batteries" });
             Room? kitchen = new("Kitchen", "You are in the kitchen.\n To the north you see your bedroom.\n To the east you see your hallway.\n To the south you see your living room.\n To the west there is... nothing." ,new List<string>{ "Egg shells", "Rotten banana", "Empty milk carton", "Empty glass jar of pesto", "Empty can of animal food" });
@@ -30,7 +32,7 @@ namespace WasteHunters
             // restaurant instead of museum
             // store instead of school
             Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "Cigarette butts", "Empty aluminium cans", "Receipts and paper scraps" });
-            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "Cables", "Polystyrene", "Metal cleaning acid" });
+            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); //"Cables", "Polystyrene", "Metal cleaning acid"
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
             Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "Bubble gums", "Bottle caps", "Broken glass" });
             Room? forest = new("Forest", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
@@ -214,6 +216,14 @@ namespace WasteHunters
                                 }
                                 
                             }
+                            ////vlad
+                            if (currentTrash == "ATOMIC BOMB")
+                                {
+                                    Console.WriteLine("The timer starts now!");
+                                    StartTimer();
+                                    
+                                }
+                            ////vlad
                         }
                         else 
                         {
@@ -224,6 +234,11 @@ namespace WasteHunters
                     case "inventory":
                         inventory.ShowInventory();
                         inventory.CountPoints();
+                        break;
+
+                    case "remove":
+                        inventory.RemoveItem();
+                        StopAndDisposeTimer();
                         break;
 
                     case "map":
@@ -268,6 +283,31 @@ namespace WasteHunters
         {
             inventory.AddItemToGlass(itemName, RubbishPrices.RubbishValues[itemName]);
         }
+        //vlad
+        private void StartTimer()
+        {
+            if (myTimer == null)
+            {
+                myTimer = new System.Timers.Timer(5000); // 5 seconds timer
+                myTimer.Elapsed += OnTimerElapsed;
+                myTimer.Start();
+            }
+        }
+        private void OnTimerElapsed(object? sender, ElapsedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void StopAndDisposeTimer()
+        {
+        if (myTimer != null)
+            {
+                myTimer.Stop();
+                myTimer.Dispose(); // Dispose of the timer
+                myTimer = null; // Set the timer to null to prevent further use
+            }
+        } 
+        //vlad
         public void PrintMap()
         {
             Console.WriteLine("         ╔═══════╗    ╔═══════╗             ╔═══════╗             ╔═══════╗     ╔═══════╗");

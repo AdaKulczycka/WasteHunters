@@ -59,6 +59,10 @@ namespace WasteHunters{
                 }
             }
         }
+        public void RemoveItem()
+        {
+            items.Clear();
+        }
         public void CountPoints()
         {
             foreach (var category in items.Keys)
