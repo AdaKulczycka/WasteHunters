@@ -1,6 +1,7 @@
 using System.Transactions;
-
+using System.Timers;
 using System.Security.Cryptography.X509Certificates;
+
 
 namespace WasteHunters
 {
@@ -10,6 +11,7 @@ namespace WasteHunters
         private Room? previousRoom;
         private Inventory inventory;
         Random random = new Random();
+        public System.Timers.Timer? myTimer = null;
         public List<string>? beachTrash;
         public Game()
         {
@@ -28,7 +30,7 @@ namespace WasteHunters
             // restaurant instead of museum
             // store instead of school
             Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "Cigarette butts", "Empty aluminium cans", "Receipts and paper scraps" });
-            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "Cables", "Polystyrene", "Metal cleaning acid" });
+            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" });
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
             Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "Bubble gums", "Bottle caps", "Broken glass" });
             Room? forest = new("Forest", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
@@ -124,6 +126,8 @@ namespace WasteHunters
             bool continuePlaying = true;
             while (continuePlaying)
             {
+
+
                 Console.WriteLine(currentRoom?.ShortDescription);
                 Console.Write("> ");
 
@@ -188,12 +192,24 @@ namespace WasteHunters
                                 TakeItem(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
                                 Console.WriteLine($"You picked up {currentTrash}");
                                 currentRoom?.Garbage.Remove(currentTrash);
+
+                                if (currentTrash == "ATOMIC BOMB")
+                                {
+                                    Console.WriteLine("The timer starts now!");
+                                    StartTimer();
+                                    
+                                }
                             }
                         }
                         else 
                         {
                             Console.WriteLine("This room is does not have any trash left.");
                         }
+                        break;
+                    
+                    case "remove":
+                        StopAndDisposeTimer();
+                        inventory.RemoveItem();
                         break;
 
                     case "inventory":
@@ -205,12 +221,17 @@ namespace WasteHunters
                         break;
 
                     default:
-                        Console.WriteLine("I don't know what command.");
+                        Console.WriteLine("I don't know that command.");
                         break;
                 }
             }
 
-            Console.WriteLine("Thank you for playing World of Zuul!");
+            Console.WriteLine("Thank you for playing Waste Hunters!");
+        }
+
+        private void OnTimerElapsed(object? sender, ElapsedEventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void Move(string direction)
@@ -229,6 +250,25 @@ namespace WasteHunters
         private void TakeItem(string itemName, int value)
         {
             inventory.AddItem(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
+        private void StartTimer()
+        {
+            if (myTimer == null)
+            {
+                myTimer = new System.Timers.Timer(5000); // 5 seconds timer
+                myTimer.Elapsed += OnTimerElapsed;
+                myTimer.Start();
+            }
+        }
+
+        private void StopAndDisposeTimer()
+        {
+        if (myTimer != null)
+            {
+                myTimer.Stop();
+                myTimer.Dispose(); // Dispose of the timer
+                myTimer = null; // Set the timer to null to prevent further use
+            }
         }
 
         public void PrintMap()

@@ -1,8 +1,9 @@
-namespace WasteHunters{
+namespace WasteHunters
+{
     public class Inventory{
         int sum = 0; 
 
-        private Dictionary<string, int>? items;
+        private Dictionary<string, int> items;
         public Inventory()
         {
             items = new Dictionary<string, int>();
@@ -12,6 +13,12 @@ namespace WasteHunters{
         {
             items?.Add(itemName, value);
             sum += value;
+        }
+
+        public void RemoveItem()
+        {
+            items.Clear();
+            
         }
 
         public void ShowInventory()
@@ -31,6 +38,10 @@ namespace WasteHunters{
             System.Console.WriteLine(sum);
         }
 
+        public bool HasItem(string itemName)
+        {
+            return items.ContainsKey(itemName);
+        }
     }
     /*private Dictionary<string, int> items;
 

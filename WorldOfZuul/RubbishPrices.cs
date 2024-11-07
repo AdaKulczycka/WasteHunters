@@ -60,7 +60,8 @@ namespace WasteHunters
             { "Pizza box", 20},
             { "Used tissue", 5},
             { "Food leftovers", 10},
-            { "Glass bottles", 95}
+            { "Glass bottles", 95},
+            {"ATOMIC BOMB", 5}
         };
     }
 }

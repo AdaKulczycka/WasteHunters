@@ -12,7 +12,7 @@ namespace WasteHunters
             { "Hallway", new List<string> { "pet food leftovers", "shattered glass", "old torn shoelaces" } },
             { "Garage", new List<string> { "oil bottles", "dirty rags", "broken tools" } },
             { "City centre", new List<string> { "cigarette butts", "empty aluminium cans", "receipts and paper scraps" } },
-            { "Factory", new List<string> { "cables", "polystyrene", "metal cleaning acid" } },
+            { "Factory", new List<string> { "ATOMIC BOMB" } },
             { "Mall", new List<string> { "plastic bottles", "food wrappers", "plastic wraps and boxes" } },
             { "Park", new List<string> { "bubble gums", "bottle caps", "broken glass" } },
             { "Forest", new List<string> { "tires", "bottle caps", "plastic bottles" } },
