@@ -359,18 +359,7 @@ namespace WasteHunters
 
 //NPCs talking about specific trash doing shit to specific environment
 //Special items to give special points or superpowers
-//Atomic waste that would finish the game insantly
 //Countdown system
 //Crafting objects from the trash in the inventory
-// ADD INVENTORY SECTIONS : PLASTICS, HAZARDOUS, PAPER
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
-// dicr1
-// {
-//     dict1
-//     {
-//         {plastic, 2312}
-//     }
-//     2
-//     3
-//     4
-// }
+
