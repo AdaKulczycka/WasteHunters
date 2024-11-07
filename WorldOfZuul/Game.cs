@@ -1,6 +1,8 @@
 using System.Transactions;
 
 using System.Security.Cryptography.X509Certificates;
+using System.Collections;
+using System.Formats.Asn1;
 
 namespace WasteHunters
 {
@@ -117,6 +119,7 @@ namespace WasteHunters
         public void Play()
         {
             String currentTrash;
+            // String answer;
             Parser parser = new();
 
             PrintWelcome();
@@ -184,10 +187,32 @@ namespace WasteHunters
                             Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
                             if (Console.ReadLine()  == "take")
                             {
-                                // pickup-currentTrash
-                                TakeItem(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
-                                Console.WriteLine($"You picked up {currentTrash}");
-                                currentRoom?.Garbage.Remove(currentTrash);
+                                // choose the inventory category
+                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic or glass");
+                                string? choice = Console.ReadLine();
+                                if (choice == "paper")
+                                {
+                                    TakeItemToPaper(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
+                                else if (choice == "plastic")
+                                {
+                                    TakeItemToPlastic(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
+                                else if (choice == "glass")
+                                {
+                                    TakeItemToGlass(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
+                                else 
+                                {
+                                    Console.WriteLine("Invalid choice, please choose between the following: paper, plastic, glass");
+                                }
+                                
                             }
                         }
                         else 
@@ -198,6 +223,7 @@ namespace WasteHunters
 
                     case "inventory":
                         inventory.ShowInventory();
+                        inventory.CountPoints();
                         break;
 
                     case "map":
@@ -226,11 +252,22 @@ namespace WasteHunters
             }
         }
 
-        private void TakeItem(string itemName, int value)
+        // private void TakeItem(string itemName, int value)
+        // {
+        //     // inventory.AddItem(itemName, RubbishPrices.RubbishValues[itemName]);
+        // }
+        private void TakeItemToPaper(string itemName, int value)
         {
-            inventory.AddItem(itemName, RubbishPrices.RubbishValues[itemName]);
+            inventory.AddItemToPaper(itemName, RubbishPrices.RubbishValues[itemName]);
         }
-
+        private void TakeItemToPlastic(string itemName, int value)
+        {
+            inventory.AddItemToPlastic(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
+        private void TakeItemToGlass(string itemName, int value)
+        {
+            inventory.AddItemToGlass(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
         public void PrintMap()
         {
             Console.WriteLine("         ╔═══════╗    ╔═══════╗             ╔═══════╗             ╔═══════╗     ╔═══════╗");
@@ -280,13 +317,18 @@ namespace WasteHunters
     }
 }
 
+//NPCs talking about specific trash doing shit to specific environment
+//Special items to give special points or superpowers
+//Atomic waste that would finish the game insantly
+//Countdown system
+//Crafting objects from the trash in the inventory
 // ADD INVENTORY SECTIONS : PLASTICS, HAZARDOUS, PAPER
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
 // dicr1
 // {
 //     dict1
 //     {
-//         {plastic shit, 2312}
+//         {plastic, 2312}
 //     }
 //     2
 //     3
