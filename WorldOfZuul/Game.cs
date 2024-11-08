@@ -35,7 +35,7 @@ namespace WasteHunters
             Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); //"Cables", "Polystyrene", "Metal cleaning acid"
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
             Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "Bubble gums", "Bottle caps", "Broken glass" });
-            Room? forest = new("Forest", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
+            Room? forest = new("Forest\nAs you look around, you see numerous trees struggling to thrive. The soil beneath them is dry, and their branches seem weak. There's a great way to \nreduce waste and help combat overproduction and overconsumption—composting! Would you like to start a compost to nourish the earth and give these \ntrees a chance to grow stronger? \nTo approach the trees, where a perfect spot for compost awaits, type 'compost'.", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
             Room? waterfall = new("Waterfall", "You've entered a waterfall.\n To the north you see a beach.\n To the east you see a forest.\n To the south you see a pond.\n To the west you see a dumping yard." ,new List<string>{ "Wet wipes", "Empty aluminium cans", "Flip-flops" });
             Room? clearing = new("Clearing", "You've entered a clearing.\n To the north you see a beach.\n To the east you see a waterfall.\n To the south you see a dumping yard.\n To the west you see a beach." ,new List<string>{ "Old tent", "Broken glass", "Paper plates" });
             Room? pond = new("Pond", "You've entered a pond.\n To the north you see a waterfall.\n To the east you see a factory.\n To the south  you see... nothing.\n To the west you see a dumping yard." ,new List<string>{ "Empty aluminium cans", "Plastic straw", "Fishing nets" });
@@ -210,20 +210,24 @@ namespace WasteHunters
                                     Console.WriteLine($"You picked up {currentTrash}");
                                     currentRoom?.Garbage.Remove(currentTrash);
                                 }
+                                else if (choice == "bio")
+                                {
+                                    TakeItemToBioWaste(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
                                 else 
                                 {
                                     Console.WriteLine("Invalid choice, please choose between the following: paper, plastic, glass");
                                 }
                                 
                             }
-                            ////vlad
                             if (currentTrash == "ATOMIC BOMB")
                                 {
                                     Console.WriteLine("The timer starts now!");
                                     StartTimer();
                                     
                                 }
-                            ////vlad
                         }
                         else 
                         {
@@ -259,7 +263,9 @@ namespace WasteHunters
                     case "map":
                         PrintMap();
                         break;
-
+                    case "compost":
+                        //
+                        break;
                     default:
                         Console.WriteLine("I don't know what command.");
                         break;
@@ -298,7 +304,10 @@ namespace WasteHunters
         {
             inventory.AddItemToGlass(itemName, RubbishPrices.RubbishValues[itemName]);
         }
-        //vlad
+        private void TakeItemToBioWaste(string itemName, int value)
+        {
+            inventory.AddItemToBioWaste(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
         private void StartTimer()
         {
             if (myTimer == null)
@@ -369,23 +378,30 @@ namespace WasteHunters
             Console.WriteLine("Type 'take' to pick up the trash in the room");
             Console.WriteLine("Type 'inventory' to show the inventory");
         }
+        public void Compost()
+        {
+            Console.WriteLine("Do you want to empty your biologic waste inventory? (Y/N)");
+            string? answer = Console.ReadLine();
+            if (answer == "Y" || answer == "y" || answer == "yes")
+            {
+                
+            }
+
+
+        }
     }
 }
 
 //NPCs talking about specific trash doing shit to specific environment
 //Special items to give special points or superpowers
-//Atomic waste that would finish the game insantly
 //Countdown system
 //Crafting objects from the trash in the inventory
-// ADD INVENTORY SECTIONS : PLASTICS, HAZARDOUS, PAPER
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
-// dicr1
-// {
-//     dict1
-//     {
-//         {plastic, 2312}
-//     }
-//     2
-//     3
-//     4
-// }
+
+
+// Sorting Guide Booklet
+// When collected, this booklet provides hints or tips about the correct sorting categories for different trash items. 
+// This could either reveal hints about items you’ve already collected or help with new, more challenging trash types.
+
+// Compost in forest/park
+// special inventory for compost, and option to dump it in the forest for extra points

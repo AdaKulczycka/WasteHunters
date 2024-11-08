@@ -9,7 +9,7 @@ namespace WasteHunters
 {
     public class CommandWords
     {
-        public List<string> ValidCommands { get; } = new List<string> { "north", "east", "south", "west", "look", "back", "quit", "out", "help", "take", "trash", "inventory", "map","remove"};
+        public List<string> ValidCommands { get; } = new List<string> { "north", "east", "south", "west", "look", "back", "quit", "out", "help", "take", "trash", "inventory", "map","remove","compost"};
 
         public bool IsValidCommand(string command)
         {
