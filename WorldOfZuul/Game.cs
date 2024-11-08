@@ -405,3 +405,5 @@ namespace WasteHunters
 
 // Compost in forest/park
 // special inventory for compost, and option to dump it in the forest for extra points
+
+// create a string list of inventory categories to easy access
