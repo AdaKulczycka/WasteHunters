@@ -190,7 +190,7 @@ namespace WasteHunters
                             if (Console.ReadLine()  == "take")
                             {
                                 // choose the inventory category
-                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic or glass");
+                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic, glass or bio");
                                 string? choice = Console.ReadLine();
                                 if (choice == "paper")
                                 {
@@ -207,6 +207,12 @@ namespace WasteHunters
                                 else if (choice == "glass")
                                 {
                                     TakeItemToGlass(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
+                                else if (choice == "bio")
+                                {
+                                    TakeItemToBioWaste(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
                                     Console.WriteLine($"You picked up {currentTrash}");
                                     currentRoom?.Garbage.Remove(currentTrash);
                                 }
@@ -282,6 +288,10 @@ namespace WasteHunters
         private void TakeItemToGlass(string itemName, int value)
         {
             inventory.AddItemToGlass(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
+        private void TakeItemToBioWaste(string itemName, int value)
+        {
+            inventory.AddItemToBioWaste(itemName, RubbishPrices.RubbishValues[itemName]);
         }
         //vlad
         private void StartTimer()
@@ -363,3 +373,10 @@ namespace WasteHunters
 //Crafting objects from the trash in the inventory
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
 
+
+// Sorting Guide Booklet
+// When collected, this booklet provides hints or tips about the correct sorting categories for different trash items. 
+// This could either reveal hints about items you’ve already collected or help with new, more challenging trash types.
+
+// Compost in forest/park
+// special inventory for compost, and option to dump it in the forest for extra points

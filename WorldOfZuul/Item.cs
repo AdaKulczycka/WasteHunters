@@ -13,7 +13,8 @@ namespace WasteHunters{
             {
                 { "plastic", new Dictionary<string, int>() },
                 { "paper", new Dictionary<string, int>() },
-                { "glass", new Dictionary<string, int>() }
+                { "glass", new Dictionary<string, int>() },
+                { "bio waste", new Dictionary<string, int>() }
             };
         }
 
@@ -31,7 +32,10 @@ namespace WasteHunters{
         {
             AddItemToCategory("glass", itemName, value);
         }
-
+        public void AddItemToBioWaste(string itemName, int value)
+        {
+            AddItemToCategory("bio waste", itemName, value);
+        }
         // Generic method to add items to any category
         private void AddItemToCategory(string category, string itemName, int value)
         {
