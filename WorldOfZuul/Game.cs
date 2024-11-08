@@ -190,7 +190,7 @@ namespace WasteHunters
                             if (Console.ReadLine()  == "take")
                             {
                                 // choose the inventory category
-                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic or glass");
+                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic, glass or bio");
                                 string? choice = Console.ReadLine();
                                 if (choice == "paper")
                                 {
@@ -264,7 +264,7 @@ namespace WasteHunters
                         PrintMap();
                         break;
                     case "compost":
-                        //
+                        inventory.CompostRemove();
                         break;
                     default:
                         Console.WriteLine("I don't know what command.");
@@ -380,12 +380,14 @@ namespace WasteHunters
         }
         public void Compost()
         {
-            Console.WriteLine("Do you want to empty your biologic waste inventory? (Y/N)");
-            string? answer = Console.ReadLine();
-            if (answer == "Y" || answer == "y" || answer == "yes")
-            {
-                
-            }
+            // Console.WriteLine("Do you want to empty your biologic waste inventory? (Y/N)");
+            // string? answer = Console.ReadLine();
+            // if (answer == "Y" || answer == "y" || answer == "yes")
+            // {
+            //     foreach (var item in inventory.item)
+            //     inventory.RemoveItem
+            // }
+            inventory.CompostRemove();
 
 
         }

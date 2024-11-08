@@ -81,5 +81,13 @@ namespace WasteHunters{
             }
             Console.WriteLine($"Sum up of all the values together: {sum}");
         }
+        public void CompostRemove()
+        {
+            foreach (var item in items["bio waste"].Keys)
+            {
+                items["bio waste"].Remove(item);
+                sum = 0;
+            }
+        }
     }
 }
