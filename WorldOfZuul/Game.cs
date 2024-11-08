@@ -35,7 +35,7 @@ namespace WasteHunters
             Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); //"Cables", "Polystyrene", "Metal cleaning acid"
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
             Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "Bubble gums", "Bottle caps", "Broken glass" });
-            Room? forest = new("Forest\nAs you look around, you see numerous trees struggling to thrive. The soil beneath them is dry, and their branches seem weak. There's a great way to \nreduce waste and help combat overproduction and overconsumption—composting! Would you like to start a compost to nourish the earth and give these \ntrees a chance to grow stronger? \nTo approach the trees, where a perfect spot for compost awaits, type 'compost'.", "You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
+            Room? forest = new("Forest", "As you look around, you see numerous trees struggling to thrive. The soil beneath them is dry, and their branches seem weak. There's a great way to \nreduce waste and help combat overproduction and overconsumption—composting! Would you like to start a compost to nourish the earth and give these \ntrees a chance to grow stronger? You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
             Room? waterfall = new("Waterfall", "You've entered a waterfall.\n To the north you see a beach.\n To the east you see a forest.\n To the south you see a pond.\n To the west you see a dumping yard." ,new List<string>{ "Wet wipes", "Empty aluminium cans", "Flip-flops" });
             Room? clearing = new("Clearing", "You've entered a clearing.\n To the north you see a beach.\n To the east you see a waterfall.\n To the south you see a dumping yard.\n To the west you see a beach." ,new List<string>{ "Old tent", "Broken glass", "Paper plates" });
             Room? pond = new("Pond", "You've entered a pond.\n To the north you see a waterfall.\n To the east you see a factory.\n To the south  you see... nothing.\n To the west you see a dumping yard." ,new List<string>{ "Empty aluminium cans", "Plastic straw", "Fishing nets" });
@@ -263,8 +263,22 @@ namespace WasteHunters
                     case "map":
                         PrintMap();
                         break;
+                    // case "go":
                     case "compost":
-                        inventory.CompostRemove();
+                        if (currentRoom?.ShortDescription != "Forest")
+                        {
+                            Console.WriteLine("This rooms does not look like a good place to start a compost");
+                        }
+                        else if (inventory.CheckEmptyBio())
+                        {
+                            Console.WriteLine("It looks like, there are no items in your bio hazard inventory");
+                        }
+                        else 
+                        {
+                            inventory.CompostRemove();
+                            Console.WriteLine("You just emptied your bio waste inventory and started a compost to help the trees grow.");
+                        }
+                    
                         break;
                     default:
                         Console.WriteLine("I don't know what command.");
@@ -288,10 +302,6 @@ namespace WasteHunters
             }
         }
 
-        // private void TakeItem(string itemName, int value)
-        // {
-        //     // inventory.AddItem(itemName, RubbishPrices.RubbishValues[itemName]);
-        // }
         private void TakeItemToPaper(string itemName, int value)
         {
             inventory.AddItemToPaper(itemName, RubbishPrices.RubbishValues[itemName]);
@@ -377,19 +387,6 @@ namespace WasteHunters
             Console.WriteLine("Type 'trash' to show the trash in the current room");
             Console.WriteLine("Type 'take' to pick up the trash in the room");
             Console.WriteLine("Type 'inventory' to show the inventory");
-        }
-        public void Compost()
-        {
-            // Console.WriteLine("Do you want to empty your biologic waste inventory? (Y/N)");
-            // string? answer = Console.ReadLine();
-            // if (answer == "Y" || answer == "y" || answer == "yes")
-            // {
-            //     foreach (var item in inventory.item)
-            //     inventory.RemoveItem
-            // }
-            inventory.CompostRemove();
-
-
         }
     }
 }

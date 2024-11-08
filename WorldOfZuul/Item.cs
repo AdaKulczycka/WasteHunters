@@ -89,5 +89,13 @@ namespace WasteHunters{
                 sum = 0;
             }
         }
+        public bool CheckEmptyBio()
+        {
+            if (items["bio waste"].Count() == 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
