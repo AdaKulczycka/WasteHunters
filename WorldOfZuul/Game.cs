@@ -237,7 +237,22 @@ namespace WasteHunters
                         break;
 
                     case "remove":
-                        inventory.RemoveItem();
+                        Console.WriteLine("Please specify the category (paper, plastic, glass) of the item to remove:");
+                        string? category = Console.ReadLine();
+                    
+                        Console.WriteLine("Please specify the name of the item to remove:");
+                        string? itemName = Console.ReadLine();
+
+                         if (string.IsNullOrEmpty(itemName))
+                        {
+                            Console.WriteLine("Invalid item name.");
+                            break;
+                        }
+
+#pragma warning disable CS8604 // Possible null reference argument.
+                        inventory.RemoveItem(category, itemName);
+#pragma warning restore CS8604 // Possible null reference argument.
+                        
                         StopAndDisposeTimer();
                         break;
 
