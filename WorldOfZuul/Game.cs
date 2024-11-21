@@ -370,6 +370,7 @@ namespace WasteHunters
         {
             Console.WriteLine("Welcome to the Waste Hunters game!");
             Console.WriteLine("It is an interactive and educational game based on the 12th SDG. \n(sustainable consumption and production patterns)\n");
+            Console.WriteLine("You woke up from a beautiful dream, where you had a vision of how the island of Zool once looked liked. You decide that this dream is a sign and that you are encouraged to save the island from all the trash there is. What does that  is no trash in the world and ");
             PrintHelp();
             Console.WriteLine();
         }
@@ -379,21 +380,73 @@ namespace WasteHunters
             Console.WriteLine("You are lost. You are alone. You wander");
             Console.WriteLine("around the city.");
             Console.WriteLine();
-            Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
-            Console.WriteLine("Type 'look' for more details.");
-            Console.WriteLine("Type 'back' to go to the previous room.");
-            Console.WriteLine("Type 'help' to print this message again.");
-            Console.WriteLine("Type 'quit' to exit the game.");
-            Console.WriteLine("Type 'trash' to show the trash in the current room");
-            Console.WriteLine("Type 'take' to pick up the trash in the room");
-            Console.WriteLine("Type 'inventory' to show the inventory");
+            Console.WriteLine("Navigate by typing");
+            
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'north', 'south', 'east', 'west', or 'out'");
+            Console.ResetColor();
+            Console.WriteLine(" (if you are in the hallway).");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'look'");
+            Console.ResetColor();
+            Console.WriteLine(" for more details.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'back'");
+            Console.ResetColor();
+            Console.WriteLine(" to go to the previous room.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'help'");
+            Console.ResetColor();
+            Console.WriteLine(" to print this message again.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'quit'");
+            Console.ResetColor();
+            Console.WriteLine(" to exit the game.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'trash'");
+            Console.ResetColor();
+            Console.WriteLine(" to show the trash in the current room.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'take'");
+            Console.ResetColor();
+            Console.WriteLine(" to pick up the trash in the room.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'inventory'");
+            Console.ResetColor();
+            Console.WriteLine(" to show the inventory.");
+            
+            // Console.WriteLine("You are lost. You are alone. You wander");
+            // Console.WriteLine("around the city.");
+            // Console.WriteLine();
+            // Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
+            // Console.WriteLine("Type 'look' for more details.");
+            // Console.WriteLine("Type 'back' to go to the previous room.");
+            // Console.WriteLine("Type 'help' to print this message again.");
+            // Console.WriteLine("Type 'quit' to exit the game.");
+            // Console.WriteLine("Type 'trash' to show the trash in the current room");
+            // Console.WriteLine("Type 'take' to pick up the trash in the room");
+            // Console.WriteLine("Type 'inventory' to show the inventory");
         }
     }
 }
 
 //NPCs talking about specific trash doing shit to specific environment
 //Special items to give special points or superpowers
-//Countdown system
 //Crafting objects from the trash in the inventory
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
 
@@ -406,3 +459,13 @@ namespace WasteHunters
 // special inventory for compost, and option to dump it in the forest for extra points
 
 // create a string list of inventory categories to easy access
+
+// do algorithm for the setexits, do list of lists so that it doesnt look like shit
+// [
+//     [
+//         Beach, Beach, Beach, ...
+//     ],
+//     [
+//         Beach, Clearing, ...
+//     ]
+// ]
