@@ -12,13 +12,14 @@ namespace WasteHunters
         private Room? currentRoom;
         private Room? previousRoom;
         private Inventory inventory;
+        private Map map;
         Random random = new Random();
         public List<string>? beachTrash;
         public System.Timers.Timer? myTimer = null;
         public Game()
         {
             inventory = new Inventory();
-
+            map = new Map();
             CreateRooms();
         }
 
@@ -261,7 +262,7 @@ namespace WasteHunters
                         break;
 
                     case "map":
-                        PrintMap();
+                        map.PrintMap();
                         break;
                     // case "go":
                     case "compost":
@@ -370,7 +371,7 @@ namespace WasteHunters
         {
             Console.WriteLine("Welcome to the Waste Hunters game!");
             Console.WriteLine("It is an interactive and educational game based on the 12th SDG. \n(sustainable consumption and production patterns)\n");
-            Console.WriteLine("You woke up from a beautiful dream, where you had a vision of how the island of Zool once looked liked. You decide that this dream is a sign and that you are encouraged to save the island from all the trash there is. What does that  is no trash in the world and ");
+            Console.WriteLine("You woke up from a beautiful dream, where you had a vision of how the island of Zool once looked liked. You decide that this dream is a sign and that you are encouraged to save the island from all the trash there is. That is how you become a Waste Hunter.");
             PrintHelp();
             Console.WriteLine();
         }
@@ -429,7 +430,7 @@ namespace WasteHunters
             Console.Write("'inventory'");
             Console.ResetColor();
             Console.WriteLine(" to show the inventory.");
-            
+
             // Console.WriteLine("You are lost. You are alone. You wander");
             // Console.WriteLine("around the city.");
             // Console.WriteLine();
@@ -449,7 +450,6 @@ namespace WasteHunters
 //Special items to give special points or superpowers
 //Crafting objects from the trash in the inventory
 // MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
-
 
 // Sorting Guide Booklet
 // When collected, this booklet provides hints or tips about the correct sorting categories for different trash items. 
