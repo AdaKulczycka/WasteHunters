@@ -296,11 +296,107 @@ namespace WasteHunters
             {
                 previousRoom = currentRoom;
                 currentRoom = currentRoom?.Exits[direction];
+
+                if (currentRoom != null)
+                {
+                    NPCs(currentRoom);
+                }
             }
             else
             {
                 Console.WriteLine($"You can't go {direction}!");
             }
+        }
+        private void NPCs (Room room)
+        {
+            if (room.ShortDescription == "Forest")
+            {
+                Console.WriteLine("Do you want to interact with Viola the flowering plant in the forest?");
+                Console.WriteLine("*Type 'yes' to interact*");
+                Console.WriteLine("*Press 'Enter' to skip*");
+                string? input = Console.ReadLine()?.ToLower();
+                if (input == "yes")
+                {
+                Console.WriteLine("Viola the flowering plant: Hey human!");
+                Console.ReadKey(true);
+                Console.WriteLine("You know, all that waste is really bad for us here in the forest.");
+                Console.ReadKey(true);
+                Console.WriteLine("Be it plastic, metal or glass, it releases toxins into the soil and water, thus negatively affecting its quality.");
+                Console.ReadKey(true);
+                Console.WriteLine("Also invasive plant species tend to overtake due to them being more resilient in such environment and native species get displaced.");
+                Console.ReadKey(true);
+                Console.WriteLine("Animals are affected aswell as herbivores eat contaminated plants and therefore get exposed to toxic substances.");
+                Console.ReadKey(true);
+                Console.WriteLine("That plastic bottle is blocking my sunlight by the way... Could you be so kind and remove it?");
+                }
+            }
+            if (room.ShortDescription == "Grocery store")
+            {
+                Console.WriteLine("Do you want to interact with Cashier at the grocery store?");
+                Console.WriteLine("*Type 'yes' to interact*");
+                Console.WriteLine("*Press 'Enter' to skip*");
+                string? input = Console.ReadLine()?.ToLower();
+                if (input == "yes")
+            {
+                Console.WriteLine("Cashier: Hey dude, long time no see!");
+                Console.ReadKey(true);
+                Console.WriteLine("Heard you're cleaning up the city a bit, good job! You know, I've read recently that plastic can take up to a 1000 years to decompose in landfills.");
+                Console.ReadKey(true);
+                Console.WriteLine("And even then it doesn't just dissapear, it just breaks down into smaller pieces - microplastics, that can spread into soil and water.");
+                Console.ReadKey(true);
+                Console.WriteLine("That way it contaminates ecosystems and enter the food chain, affecting both wildlife and people. Horrible. Really motivates me to recycle more.");
+                Console.ReadKey(true);
+                Console.WriteLine("Speaking of recycling, some guys just littered all over the floor over there. The line is so long though so I'm stuck at the cash register...");
+                Console.ReadKey(true);
+                Console.WriteLine("Could you help me out a bit here and collect the scattered rubbish if you're not busy?");
+                Console.WriteLine("*Type 'yes' or 'no'*");
+                string? interact = Console.ReadLine()?.ToLower();
+                if (interact == "yes")
+                    {
+                        Console.WriteLine("Oh thanks, appreciate it!");
+                    }
+                if (interact == "no") 
+                    {
+                        Console.WriteLine("Oh, well, that's fine, sorry for asking.");
+                    }
+            }
+            }
+                if (room.ShortDescription == "Pond")
+            {
+                Console.WriteLine("Do you want to interact with Common Toad at the pond?");
+                Console.WriteLine("*Type 'yes' to interact*");
+                Console.WriteLine("*Press 'Enter' to skip*");
+                string? interact = Console.ReadLine()?.ToLower();
+                if (interact == "yes")
+            {
+                Console.WriteLine("Common Toad: Pshhh, mate");
+                Console.ReadKey(true);
+                Console.WriteLine("This pond has gotten really contaminated lately. It's getting hard to live here now!");
+                Console.ReadKey(true);
+                Console.WriteLine("Did you know that waste affects the water quality, making it more toxic and essentially poisoning the aquatic life?");
+                Console.ReadKey(true);
+                Console.WriteLine("Living beings in polluted water are also put at risk of ingesting trash or getting entangled.");
+                Console.ReadKey(true);
+                Console.WriteLine("I'd really appreciate it if you could clean this pond up a little.");
+            }
+                
+            }
+                if (room.ShortDescription == "Factory")
+            {
+                Console.WriteLine("Security guard: Hey, YOU! What are you doing here?!");
+                Console.WriteLine("*Type 'yes' to explain yourself*");
+                Console.WriteLine("*Press 'Enter' to skip*");
+                string? interact = Console.ReadLine()?.ToLower();
+                if (interact == "yes")
+                    {
+                        Console.WriteLine("You: Oh, just cleaning up the city. So much rubbish everywhere.");
+                        Console.ReadKey(true);
+                        Console.WriteLine("Security guard: Rubbish? I didn't see any here.");
+                        Console.ReadKey(true);
+                         
+                    }
+            }
+                
         }
 
         private void TakeItemToPaper(string itemName, int value)
