@@ -24,7 +24,7 @@ namespace WasteHunters
             Console.WriteLine("         ╚═══║═══╝ ╚══════║═══════╝ ║ Living room            ║ ╚══════║═══════╝ ╚═══║═══╝");
             Console.WriteLine("             ║            ║         ╚════════════════════════╝        ║             ║    ");
             Console.WriteLine("         ╔═══║═══╗ ╔══════║═══════╗      ╔══════════════╗      ╔══════║═══════╗ ╔═══║═══╗");
-            Console.WriteLine("         ║ BEACH ║═║ GROCERY STORE║══════║     PARK     ║══════║    MALL      ║═║ BEACH ║");
+            Console.WriteLine("         ║ BEACH ║═║ GROCERY STORE║══════║     PARK     ║══════║     MALL     ║═║ BEACH ║");
             Console.WriteLine("         ╚═══║═══╝ ╚══════║═══════╝      ╚══════║═══════╝      ╚══════║═══════╝ ╚═══║═══╝");
             Console.WriteLine("         ╔═══║═══╗    ╔═══║═══╗             ╔═══║═══╗             ╔═══║═══╗     ╔═══║═══╗");
             Console.WriteLine("         ║ BEACH ║════║ BEACH ║═════════════║ BEACH ║═════════════║ BEACH ║═════║ BEACH ║");
