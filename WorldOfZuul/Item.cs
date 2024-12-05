@@ -95,6 +95,7 @@ namespace WasteHunters{
                 items[category].Remove(itemName);
             }
         }
+        
         public void CountPoints()
         {
             sum = 0;
@@ -106,6 +107,15 @@ namespace WasteHunters{
                 }
             }
             Console.WriteLine($"Sum up of all the values together: {sum}");
+        }
+        public void CompostPoints()
+        {
+            int pointscompost = 0;
+            foreach (var item in items["bio waste"])
+            {
+                pointscompost += item.Value; 
+            }
+            points += pointscompost * 2;
         }
         public void CompostRemove()
         {

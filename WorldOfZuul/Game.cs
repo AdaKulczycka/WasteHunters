@@ -276,8 +276,11 @@ namespace WasteHunters
                         }
                         else 
                         {
+                            inventory.CompostPoints();
                             inventory.CompostRemove();
                             Console.WriteLine("You just emptied your bio waste inventory and started a compost to help the trees grow.");
+                            Console.WriteLine("You received double the points as a reward.");
+                           
                         }
                     
                         break;
@@ -323,15 +326,17 @@ namespace WasteHunters
                 {
                 Console.WriteLine("Old man: Oh hi there.");
                 Console.ReadKey(true);
-                Console.WriteLine("You know, all that waste is really bad for the plants here in the forest.");
+                Console.WriteLine("Have you ever heard of compost?");
                 Console.ReadKey(true);
-                Console.WriteLine("Be it plastic, metal or glass, it releases toxins into the soil and water, thus negatively affecting its quality, it reduces soil's fertility and ability to regenerate.");
+                Console.WriteLine("It's a mix of ingredients used as a fertilizer made to improve the soil. And you know what the great thing is?");
                 Console.ReadKey(true);
-                Console.WriteLine("The entire food chain ends up affected as herbivores eat contaminated plants and therefore get exposed to toxic substances.");
+                Console.WriteLine("You can make compost from waste such as food scraps, organic byproducts and the like!");
                 Console.ReadKey(true);
-                Console.WriteLine("Shame some people can't even be bothered to not throw their trash out in the nature. I would clean this place up myself, but my back hurts so bad... ");
+                Console.WriteLine("That way you not only help the plants grow but also reduce organic waste, which is a pretty big deal since it accounts for a rather significant part of trash in landfills.");
                 Console.ReadKey(true);
-                Console.WriteLine("*You get 50 extra points for interacting with the Old man*");
+                Console.WriteLine("It also combats climate change, as it reduces the amount of greenhouse gasses entering the atmosphere, tcomphe benefits are just crazy!");
+                Console.ReadKey(true);
+                Console.WriteLine("By the way, by typing in the 'compost' command you can get rid of the 'bio' part of your inventory and help the plants in this forest. Maybe I will even give you some extra points for that!");
                 inventory.ExtraPoints();
                 
                 
