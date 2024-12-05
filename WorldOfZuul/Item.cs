@@ -4,7 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace WasteHunters{
     public class Inventory{
-        int sum = 0; 
+        int sum = 0;
+        int points = 0; 
 
         private Dictionary<string, Dictionary<string, int>> items;
         public Inventory()
@@ -41,6 +42,7 @@ namespace WasteHunters{
         {
             items[category][itemName] = value; // Add new item to category
         }
+        
 
         // Method to display the contents of each category
         public void ShowInventory()
@@ -60,8 +62,31 @@ namespace WasteHunters{
                     {
                         Console.WriteLine($"  - {item.Key}: {item.Value} points");
                     }
+                    
                 }
+                  
             }
+            DisplayPoints();   
+        }
+        public void DisplayPoints()
+        {
+            Console.WriteLine($"Points: {points}");
+        }
+        public void ExtraPoints()
+        {
+            points += 50; 
+        }
+
+        
+        public void Recycle()
+        {
+            foreach (var category in items.Keys)
+            {
+                items[category].Clear(); 
+            }
+            points += sum;
+            sum = 0;
+            Console.WriteLine($"You have successfully recycled the trash. You now have {points} points");
         }
         public void RemoveItem(string category, string itemName)
         {
@@ -72,6 +97,7 @@ namespace WasteHunters{
         }
         public void CountPoints()
         {
+            sum = 0;
             foreach (var category in items.Keys)
             {
                 foreach (var item in items[category])

@@ -310,7 +310,6 @@ namespace WasteHunters
         private bool forestVisited = false;
         private bool groceryStoreVisited = false;
         private bool pondVisited = false;
-        private bool dumpingYardVisited = false; 
         private void NPCs (Room room)
         {
             if (room.ShortDescription == "Forest" && !forestVisited)
@@ -331,6 +330,10 @@ namespace WasteHunters
                 Console.WriteLine("The entire food chain ends up affected as herbivores eat contaminated plants and therefore get exposed to toxic substances.");
                 Console.ReadKey(true);
                 Console.WriteLine("Shame some people can't even be bothered to not throw their trash out in the nature. I would clean this place up myself, but my back hurts so bad... ");
+                Console.ReadKey(true);
+                Console.WriteLine("*You get 50 extra points for interacting with the Old man*");
+                inventory.ExtraPoints();
+                
                 
                 }
             }
@@ -347,23 +350,16 @@ namespace WasteHunters
                 Console.ReadKey(true);
                 Console.WriteLine("Heard you're cleaning up the city a bit, good job! You know, I've read recently that plastic can take up to a 1000 years to decompose in landfills.");
                 Console.ReadKey(true);
-                Console.WriteLine("And even then it doesn't just dissapear, it just breaks down into smaller pieces - microplastics, that can spread into soil and water.");
+                Console.WriteLine("And even then it doesn't just disappear, it just breaks down into smaller pieces - microplastics, that can spread into soil and water.");
                 Console.ReadKey(true);
                 Console.WriteLine("That way it contaminates ecosystems and enter the food chain, affecting both wildlife and people. Horrible. Really motivates me to recycle more.");
                 Console.ReadKey(true);
                 Console.WriteLine("Speaking of recycling, some guys just littered all over the floor over there. The line is so long though so I'm stuck at the cash register...");
                 Console.ReadKey(true);
-                Console.WriteLine("Could you help me out here and collect the scattered rubbish if you're not busy?");
-                Console.WriteLine("*Type 'yes' or 'no'*");
-                string? interact = Console.ReadLine()?.ToLower();
-                if (interact == "yes")
-                    {
-                        Console.WriteLine("Oh thanks, appreciate it!");
-                    }
-                if (interact == "no") 
-                    {
-                        Console.WriteLine("Oh, well, that's fine, sorry for asking.");
-                    }
+                Console.WriteLine("I'd really appreciate it if you could help collect the rubbish");
+                Console.ReadKey(true);
+                Console.WriteLine("*You get 50 extra points for interacting with the Cashier*");
+                inventory.ExtraPoints();
                 
                 }
             }
@@ -385,14 +381,24 @@ namespace WasteHunters
                 Console.WriteLine("Living beings in polluted water are also put at risk of ingesting trash or getting entangled.");
                 Console.ReadKey(true);
                 Console.WriteLine("I'd really appreciate it if you could clean this pond up a little.");
-                
+                Console.ReadKey(true);
+                Console.WriteLine("*You get 50 extra points for interacting with the Common Toad*");
+                inventory.ExtraPoints();
             }
                 
             }
-                if (room.ShortDescription == "Dumping yard" && !dumpingYardVisited)
+                if (room.ShortDescription == "Dumping yard")
             {
-                Console.WriteLine("Recycling yard worker: Hello, what can I help you with?");
-                dumpingYardVisited = true;
+                Console.WriteLine("Do you wish to recycle the trash in your inventory and get points in return?");
+                Console.WriteLine("*Type 'yes' or 'no'");
+                string? answer = Console.ReadLine()?.ToLower();
+                if (answer == "yes")
+                    {
+                        inventory.Recycle();
+                        
+                    }
+                    
+            
                 
             }
         }
