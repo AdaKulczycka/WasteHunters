@@ -65,6 +65,119 @@ namespace WasteHunters
             Room? beachNorthWest = new("Beach", "You've entered a beach." ,beachTrash);
 
 
+            //ALGORITHM FOR SETTING UP THE MOVEMENT IN BETWEEN THE ROOMS, DOESNT WORK, BECAUSE OF THE MOVEMENT IN BETWEEN
+        //THE ROOMS OF THE APARTMENT, IDK 
+
+        // var rooms = new Dictionary<string, Room>();
+        // var coordinates = new Dictionary<(int X, int Y), Room>();
+
+        // var roomDefinitions = new List<(string Name, int X, int Y)>
+        // {
+        //     // Row 1 (top row)
+        //     ("beachNorthWest", 0, 6), ("beachNorth1", 1, 6), ("beachNorth2", 2, 6),
+        //     ("beachNorth3", 3, 6), ("beachNorthEast", 4, 6),
+
+        //     // Row 2
+        //     ("beachWest1", 0, 5), ("clearing", 1, 5), ("waterfall", 2, 5),
+        //     ("forest", 3, 5), ("beachEast1", 4, 5),
+
+        //     // Row 3
+        //     ("beachWest2", 0, 4), ("dumpingYard", 1, 4), ("pond", 2, 4),
+        //     ("factory", 3, 4), ("beachEast2", 4, 4),
+
+        //     // Row 4
+        //     ("beachWest3", 0, 3), ("restaurant", 1, 3), ("kitchen", 2, 3),
+        //     ("hallway", 3, 3), ("cityCenter", 4, 3), ("beachEast3", 5, 3),
+
+        //     // Row 5
+        //     ("beachWest4", 0, 2), ("groceryStore", 1, 2), ("park", 2, 2),
+        //     ("mall", 3, 2), ("beachEast4", 4, 2),
+
+        //     // Row 6 (bottom row)
+        //     ("beachSouthWest", 0, 1), ("beachSouth1", 1, 1), ("beachSouth2", 2, 1),
+        //     ("beachSouth3", 3, 1), ("beachSouthEast", 4, 1)
+        // };
+
+        // // Step 1: Populate the `rooms` and `coordinates`
+        // foreach (var (name, x, y) in roomDefinitions)
+        // {
+        //     Room? room = name switch
+        //     {
+        //         "beachNorthWest" => beachNorthWest,
+        //         "beachNorth1" => beachNorth1,
+        //         "beachNorth2" => beachNorth2,
+        //         "beachNorth3" => beachNorth3,
+        //         "beachNorthEast" => beachNorthEast,
+        //         "beachWest1" => beachWest1,
+        //         "clearing" => clearing,
+        //         "waterfall" => waterfall,
+        //         "forest" => forest,
+        //         "beachEast1" => beachEast1,
+        //         "beachWest2" => beachWest2,
+        //         "dumpingYard" => dumpingYard,
+        //         "pond" => pond,
+        //         "factory" => factory,
+        //         "beachEast2" => beachEast2,
+        //         "beachWest3" => beachWest3,
+        //         "restaurant" => restaurant,
+        //         "kitchen" => kitchen,
+        //         "hallway" => hallway,
+        //         "cityCenter" => cityCenter,
+        //         "beachEast3" => beachEast3,
+        //         "beachWest4" => beachWest4,
+        //         "groceryStore" => groceryStore,
+        //         "park" => park,
+        //         "mall" => mall,
+        //         "beachEast4" => beachEast4,
+        //         "beachSouthWest" => beachSouthWest,
+        //         "beachSouth1" => beachSouth1,
+        //         "beachSouth2" => beachSouth2,
+        //         "beachSouth3" => beachSouth3,
+        //         "beachSouthEast" => beachSouthEast,
+        //         _ => null
+        //     };
+
+        //     if (room != null)
+        //     {
+        //         rooms[name] = room;
+        //         coordinates[(x, y)] = room;
+        //     }
+        // }
+
+        // // Step 2: Set exits for each room
+        // foreach (var ((x, y), room) in coordinates)
+        // {
+        //     Room? north = coordinates.GetValueOrDefault((x, y + 1));
+        //     Room? east = coordinates.GetValueOrDefault((x + 1, y));
+        //     Room? south = coordinates.GetValueOrDefault((x, y - 1));
+        //     Room? west = coordinates.GetValueOrDefault((x - 1, y));
+
+        //     // Restricting apartment rooms
+        //     if (room == kitchen || room == bedroom || room == bathroom || room == livingRoom)
+        //     {
+        //         // Only connect these rooms to other apartment rooms
+        //         north = (room == kitchen) ? bedroom : north;
+        //         east = (room == kitchen) ? hallway : east;
+        //         south = (room == bedroom) ? kitchen : south;
+        //         west = (room == bathroom) ? bedroom : west;
+
+        //         // Prevent direct exits to the outside
+        //         if (room != hallway)
+        //         {
+        //             north = south = east = west = null;
+        //         }
+        //     }
+
+        //     // Special case: Allow the hallway to connect to the city center
+        //     if (room == hallway)
+        //     {
+        //         east = cityCenter;
+        //     }
+
+        //     // Set exits for the room
+        //     room.SetExits(north, east, south, west);
+        // }
+
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
             bathroom.SetExits(null, null, hallway, bedroom);
             bedroom.SetExits(null, bathroom, kitchen, bathroom);
