@@ -30,8 +30,7 @@ namespace WasteHunters
             Room? bedroom = new("Bedroom", "You are in the bedroom.\n To the north there is... nothing.\n To the east you see your bathroom.\n To the south you see your kitchen.\n To the west there is... nothing." ,new List<string>{ "Pair of socks with holes", "Candy wrapper", "Not working computer mouse", "Used batteries" });
             Room? kitchen = new("Kitchen", "You are in the kitchen.\n To the north you see your bedroom.\n To the east you see your hallway.\n To the south you see your living room.\n To the west there is... nothing." ,new List<string>{ "Egg shells", "Rotten banana", "Empty milk carton", "Empty glass jar of pesto", "Empty can of animal food" });
             Room? livingRoom = new("Living room", "You are in the living room.\n To the north you see your kitchen.\n To the east there is... nothing.\n To the south there is... nothing.\n To the west there is... nothing." ,new List<string>{ "TV", "Pizza box", "Used tissue" });
-            // restaurant instead of museum
-            // store instead of school
+
             Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "Cigarette butts", "Empty aluminium cans", "Receipts and paper scraps" });
             Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); //"Cables", "Polystyrene", "Metal cleaning acid"
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
@@ -513,6 +512,7 @@ namespace WasteHunters
             Console.Write("'inventory'");
             Console.ResetColor();
             Console.WriteLine(" to show the inventory.");
+            Console.Write("test");
 
             // Console.WriteLine("You are lost. You are alone. You wander");
             // Console.WriteLine("around the city.");
@@ -552,3 +552,4 @@ namespace WasteHunters
 //         Beach, Clearing, ...
 //     ]
 // ]
+// pasp

@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Lg6N6GLVFwY=",
+  "dgSpecHash": "XyaeoLfV/yo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\me\\Desktop\\project\\wastehunters\\worldofzuul\\WorldOfZuul.csproj",
+  "projectFilePath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\me\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
-    "C:\\Users\\me\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
-    "C:\\Users\\me\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.33\\microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512",
-    "C:\\Users\\me\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.33\\microsoft.netcore.app.host.win-x64.6.0.33.nupkg.sha512"
+    "/Users/davidskorepa/.nuget/packages/microsoft.netcore.app.ref/6.0.33/microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "/Users/davidskorepa/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.33/microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512",
+    "/Users/davidskorepa/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.33/microsoft.netcore.app.host.osx-arm64.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }
