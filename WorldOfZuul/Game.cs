@@ -16,11 +16,27 @@ namespace WasteHunters
         Random random = new Random();
         public List<string>? beachTrash;
         public System.Timers.Timer? myTimer = null;
+        private SortingGuideBooklet sortingGuideBooklet;
         public Game()
         {
             inventory = new Inventory();
             map = new Map();
+            sortingGuideBooklet = new SortingGuideBooklet
             CreateRooms();
+        }
+        public void ShowBooklet()
+        {
+            Console.WriteLine($"=== {educationalBooklet.Title} ===");
+            foreach (var section in educationalBooklet.ListSections())
+            {
+                Console.WriteLine($"- {section}");
+            }
+            Console.WriteLine("Type 'booklet <section name>' to read a specific section");
+        }
+        public void ShowBookletSection(string sectionTitle)
+        {
+            Console.WriteLine($"=== {sectionTitle} ===");
+            Console.WriteLine(educationalBooklet.GetSectionContent(sectionTitle));
         }
 
         private void CreateRooms()
@@ -234,7 +250,6 @@ namespace WasteHunters
         public void Play()
         {
             String currentTrash;
-            // String answer;
             Parser parser = new();
 
             PrintWelcome();
@@ -261,7 +276,7 @@ namespace WasteHunters
                     continue;
                 }
 
-                switch(command.Name)
+                switch (command.Name)
                 {
                     case "look":
                         Console.WriteLine(currentRoom?.LongDescription);
@@ -273,7 +288,7 @@ namespace WasteHunters
                         else
                             currentRoom = previousRoom;
                         break;
-                    
+
                     case "north":
                     case "south":
                     case "east":
@@ -290,19 +305,19 @@ namespace WasteHunters
                         break;
 
                     case "out":
-                        if (currentRoom?.ShortDescription == "Hallway" )
+                        if (currentRoom?.ShortDescription == "Hallway")
                         {
                             Move("east");
                         }
                         break;
+
                     case "trash":
                         if (currentRoom?.Garbage.Count() != 0)
                         {
                             currentTrash = string.Join(", ", currentRoom?.Garbage[random.Next(0, currentRoom.Garbage.Count())]);
                             Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
-                            if (Console.ReadLine()  == "take")
+                            if (Console.ReadLine() == "take")
                             {
-                                // choose the inventory category
                                 Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic, glass or bio");
                                 string? choice = Console.ReadLine();
                                 if (choice == "paper")
@@ -329,22 +344,20 @@ namespace WasteHunters
                                     Console.WriteLine($"You picked up {currentTrash}");
                                     currentRoom?.Garbage.Remove(currentTrash);
                                 }
-                                else 
+                                else
                                 {
                                     Console.WriteLine("Invalid choice, please choose between the following: paper, plastic, glass");
                                 }
-                                
                             }
                             if (currentTrash == "ATOMIC BOMB")
-                                {
-                                    Console.WriteLine("The timer starts now!");
-                                    StartTimer();
-                                    
-                                }
+                            {
+                                Console.WriteLine("The timer starts now!");
+                                StartTimer();
+                            }
                         }
-                        else 
+                        else
                         {
-                            Console.WriteLine("This room is does not have any trash left.");
+                            Console.WriteLine("This room does not have any trash left.");
                         }
                         break;
 
@@ -356,49 +369,60 @@ namespace WasteHunters
                     case "remove":
                         Console.WriteLine("Please specify the category (paper, plastic, glass) of the item to remove:");
                         string? category = Console.ReadLine();
-                    
+
                         Console.WriteLine("Please specify the name of the item to remove:");
                         string? itemName = Console.ReadLine();
 
-                         if (string.IsNullOrEmpty(itemName))
+                        if (string.IsNullOrEmpty(itemName))
                         {
                             Console.WriteLine("Invalid item name.");
                             break;
                         }
 
-#pragma warning disable CS8604 // Possible null reference argument.
+        #pragma warning disable CS8604 // Possible null reference argument.
                         inventory.RemoveItem(category, itemName);
-#pragma warning restore CS8604 // Possible null reference argument.
-                        
+        #pragma warning restore CS8604 // Possible null reference argument.
+
                         StopAndDisposeTimer();
                         break;
 
                     case "map":
                         map.PrintMap();
                         break;
-                    // case "go":
+
                     case "compost":
                         if (currentRoom?.ShortDescription != "Forest")
                         {
-                            Console.WriteLine("This rooms does not look like a good place to start a compost");
+                            Console.WriteLine("This room does not look like a good place to start a compost");
                         }
                         else if (inventory.CheckEmptyBio())
                         {
-                            Console.WriteLine("It looks like, there are no items in your bio hazard inventory");
+                            Console.WriteLine("It looks like there are no items in your bio hazard inventory");
                         }
-                        else 
+                        else
                         {
                             inventory.CompostPoints();
                             inventory.CompostRemove();
                             Console.WriteLine("You just emptied your bio waste inventory and started a compost to help the trees grow.");
                             Console.WriteLine("You received double the points as a reward.");
-                           
                         }
-                    
                         break;
-                    default:
-                        Console.WriteLine("I don't know what command.");
+                    case "guide":
+                        sortingGuideBooklet.ShowAllTips();
                         break;
+                    case "tip":
+                        Console.WriteLine("Enter the item you want a tip for:");
+                        string? itemName = Console.ReadLine();
+                        if (!string.IsNullOrEmpty(itemName))
+                        {
+                            sortingGuideBooklet.ShowTip(itemName);
+                        }
+                        else
+                        {
+                            Console.WriteLine("You need to specify an item name.");
+                        }
+                        break;
+                   
                 }
             }
 
@@ -626,6 +650,20 @@ namespace WasteHunters
             Console.ResetColor();
             Console.WriteLine(" to show the inventory.");
             Console.Write("test");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'tip'");
+            Console.ResetColor();
+            Console.WriteLine(" To show you a tip for recycling a specific item.");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'Guide'");
+            Console.ResetColor();
+            Console.WriteLine(" To show you the entire guide to recycling tips.");
+
+
 
             // Console.WriteLine("You are lost. You are alone. You wander");
             // Console.WriteLine("around the city.");
