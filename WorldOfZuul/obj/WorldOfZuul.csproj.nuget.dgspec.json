@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/WorldOfZuul.csproj": {}
+    "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters-1/WorldOfZuul/WorldOfZuul.csproj": {}
   },
   "projects": {
-    "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/WorldOfZuul.csproj": {
+    "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters-1/WorldOfZuul/WorldOfZuul.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
+        "projectUniqueName": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters-1/WorldOfZuul/WorldOfZuul.csproj",
         "projectName": "WorldOfZuul",
-        "projectPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
+        "projectPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters-1/WorldOfZuul/WorldOfZuul.csproj",
         "packagesPath": "/Users/davidskorepa/.nuget/packages/",
-        "outputPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/cleaning/WasteHunters/WorldOfZuul/obj/",
+        "outputPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters-1/WorldOfZuul/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/davidskorepa/.nuget/NuGet/NuGet.Config"
