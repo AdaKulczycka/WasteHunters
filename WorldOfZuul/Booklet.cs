@@ -80,21 +80,5 @@ namespace WasteHunters
                 Console.WriteLine("No tip found for: " + itemName);
             }
         }
-
-        public void ShowAllTips()
-        {
-            if (tips.Count > 0)
-            {
-                Console.WriteLine("Sorting Guide Booklet Tips:");
-                foreach (KeyValuePair<string, string> entry in tips)
-                {
-                    Console.WriteLine("- " + entry.Key + ": " + entry.Value);
-                }
-            }
-            else
-            {
-                Console.WriteLine("The booklet is empty. Add some tips first!");
-            }
-        }
     }
 }

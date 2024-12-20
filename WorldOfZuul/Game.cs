@@ -9,6 +9,7 @@ namespace WasteHunters
 {
     public class Game
     {
+        private SortingGuideBooklet guideBooklet;
         private Room? currentRoom;
         private Room? previousRoom;
         private Inventory inventory;
@@ -19,10 +20,15 @@ namespace WasteHunters
         private SortingGuideBooklet sortingGuideBooklet;
         public Game()
         {
+            guideBooklet = new SortingGuideBooklet();
             inventory = new Inventory();
             map = new Map();
-            sortingGuideBooklet = new SortingGuideBooklet
+            sortingGuideBooklet = new SortingGuideBooklet();
             CreateRooms();
+        }
+        public void ShowSortingTip(string itemName)
+        {
+            guideBooklet.ShowTip(itemName);
         }
         public void ShowBooklet()
         {
@@ -411,15 +417,13 @@ namespace WasteHunters
                         sortingGuideBooklet.ShowAllTips();
                         break;
                     case "tip":
-                        Console.WriteLine("Enter the item you want a tip for:");
-                        string? itemName = Console.ReadLine();
-                        if (!string.IsNullOrEmpty(itemName))
+                        if (command.SecondWord != null)
                         {
-                            sortingGuideBooklet.ShowTip(itemName);
+                            ShowSortingTip(command.SecondWord);
                         }
                         else
                         {
-                            Console.WriteLine("You need to specify an item name.");
+                            Console.WriteLine("Specify an item to get sorting advice. Example: 'tip plastic bottle'.");
                         }
                         break;
                    
