@@ -30,21 +30,6 @@ namespace WasteHunters
         {
             guideBooklet.ShowTip(itemName);
         }
-        public void ShowBooklet()
-        {
-            Console.WriteLine($"=== {educationalBooklet.Title} ===");
-            foreach (var section in educationalBooklet.ListSections())
-            {
-                Console.WriteLine($"- {section}");
-            }
-            Console.WriteLine("Type 'booklet <section name>' to read a specific section");
-        }
-        public void ShowBookletSection(string sectionTitle)
-        {
-            Console.WriteLine($"=== {sectionTitle} ===");
-            Console.WriteLine(educationalBooklet.GetSectionContent(sectionTitle));
-        }
-
         private void CreateRooms()
         {
             Room? hallway = new("Hallway", "You are standing in the hallway of your little cozy home.\n To the north you see your bathroom.\n To the east you can exit your house to the City Center.\n To the south there is... nothing.\n To the west you see your kitchen.", new List<string>{"Pet food leftovers", "Shattered glass", "Old torn shoelaces"});
@@ -413,9 +398,7 @@ namespace WasteHunters
                             Console.WriteLine("You received double the points as a reward.");
                         }
                         break;
-                    case "guide":
-                        sortingGuideBooklet.ShowAllTips();
-                        break;
+
                     case "tip":
                         if (command.SecondWord != null)
                         {
@@ -542,9 +525,6 @@ namespace WasteHunters
                         inventory.Recycle();
                         
                     }
-                    
-            
-                
             }
         }
                 
@@ -660,14 +640,6 @@ namespace WasteHunters
             Console.Write("'tip'");
             Console.ResetColor();
             Console.WriteLine(" To show you a tip for recycling a specific item.");
-
-            Console.Write("Type ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("'Guide'");
-            Console.ResetColor();
-            Console.WriteLine(" To show you the entire guide to recycling tips.");
-
-
 
             // Console.WriteLine("You are lost. You are alone. You wander");
             // Console.WriteLine("around the city.");
