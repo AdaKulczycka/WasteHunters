@@ -309,7 +309,7 @@ namespace WasteHunters
                             Console.WriteLine($"Type 'take' if you want to pick {currentTrash} up");
                             if (Console.ReadLine() == "take")
                             {
-                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic, glass or bio");
+                                Console.WriteLine($"Choose whether you want to put {currentTrash} it into paper, plastic, glass, general, electronic, bio or other");
                                 string? choice = Console.ReadLine();
                                 if (choice == "paper")
                                 {
@@ -329,15 +329,33 @@ namespace WasteHunters
                                     Console.WriteLine($"You picked up {currentTrash}");
                                     currentRoom?.Garbage.Remove(currentTrash);
                                 }
+                                else if (choice == "general")
+                                {
+                                    TakeItemToGeneral(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
+                                else if (choice == "electronic")
+                                {
+                                    TakeItemToElectronic(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
                                 else if (choice == "bio")
                                 {
                                     TakeItemToBioWaste(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
                                     Console.WriteLine($"You picked up {currentTrash}");
                                     currentRoom?.Garbage.Remove(currentTrash);
                                 }
+                                else if (choice == "other")
+                                {
+                                    TakeItemToOther(currentTrash, RubbishPrices.RubbishValues[currentTrash]);
+                                    Console.WriteLine($"You picked up {currentTrash}");
+                                    currentRoom?.Garbage.Remove(currentTrash);
+                                }
                                 else
                                 {
-                                    Console.WriteLine("Invalid choice, please choose between the following: paper, plastic, glass");
+                                    Console.WriteLine("Invalid choice, please choose between the following: paper, plastic, glass, general, electronic, bio or other");
                                 }
                             }
                             if (currentTrash == "ATOMIC BOMB")
@@ -358,7 +376,7 @@ namespace WasteHunters
                         break;
 
                     case "remove":
-                        Console.WriteLine("Please specify the category (paper, plastic, glass) of the item to remove:");
+                        Console.WriteLine("Please specify the category (paper, plastic, glass, bio, electronic, general or other) of the item to remove:");
                         string? category = Console.ReadLine();
 
                         Console.WriteLine("Please specify the name of the item to remove:");
@@ -388,14 +406,14 @@ namespace WasteHunters
                         }
                         else if (inventory.CheckEmptyBio())
                         {
-                            Console.WriteLine("It looks like there are no items in your bio hazard inventory");
+                            Console.WriteLine("It looks like there are no items in your bio waste inventory");
                         }
                         else
                         {
                             inventory.CompostPoints();
                             inventory.CompostRemove();
                             Console.WriteLine("You just emptied your bio waste inventory and started a compost to help the trees grow.");
-                            Console.WriteLine("You received double the points as a reward.");
+                            Console.WriteLine("If the compost only contained bio-waste you will have received double the points of the value of waste.");
                         }
                         break;
 
@@ -413,7 +431,7 @@ namespace WasteHunters
                 }
             }
 
-            Console.WriteLine("Thank you for playing World of Zuul!");
+            Console.WriteLine("Thank you for playing Wastehunters!");
         }
 
         private void Move(string direction)
@@ -517,13 +535,14 @@ namespace WasteHunters
             }
                 if (room.ShortDescription == "Dumping yard")
             {
-                Console.WriteLine("Do you wish to recycle the trash in your inventory and get points in return?");
+                Console.WriteLine("Do you wish to recycle the trash in your inventory and get points in return? This will end the game.");
                 Console.WriteLine("*Type 'yes' or 'no'");
                 string? answer = Console.ReadLine()?.ToLower();
                 if (answer == "yes")
                     {
                         inventory.Recycle();
-                        
+                        Console.WriteLine("Thank you for playing Wastehunters!");
+                        Environment.Exit(0);
                     }
             }
         }
@@ -542,9 +561,21 @@ namespace WasteHunters
         {
             inventory.AddItemToGlass(itemName, RubbishPrices.RubbishValues[itemName]);
         }
+        private void TakeItemToGeneral(string itemName, int value)
+        {
+            inventory.AddItemToGeneral(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
+        private void TakeItemToElectronic(string itemName, int value)
+        {
+            inventory.AddItemToElectronic(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
         private void TakeItemToBioWaste(string itemName, int value)
         {
             inventory.AddItemToBioWaste(itemName, RubbishPrices.RubbishValues[itemName]);
+        }
+        private void TakeItemToOther(string itemName, int value)
+        {
+            inventory.AddItemToOther(itemName, RubbishPrices.RubbishValues[itemName]);
         }
         private void StartTimer()
         {
