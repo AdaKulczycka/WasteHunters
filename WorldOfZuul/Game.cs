@@ -166,10 +166,10 @@ namespace WasteHunters
                             currentRoom = previousRoom;
                         break;
 
-                    case "north":
-                    case "south":
-                    case "east":
-                    case "west":
+                    case "n":
+                    case "s":
+                    case "e":
+                    case "w":
                         Move(command.Name);
                         break;
 
@@ -181,10 +181,10 @@ namespace WasteHunters
                         PrintHelp();
                         break;
 
-                    case "out":
+                    case "o":
                         if (currentRoom?.ShortDescription == "Hallway")
                         {
-                            Move("east");
+                            Move("e");
                         }
                         break;
 
@@ -334,7 +334,23 @@ namespace WasteHunters
             }
             else
             {
-                Console.WriteLine($"You can't go {direction}!");
+                if (direction == "n")
+                {
+                    Console.WriteLine($"You can't go {direction}orth!");
+                }
+                else if (direction == "s")
+                {
+                    Console.WriteLine($"You can't go {direction}outh!");
+                }
+                else if (direction == "e")
+                {
+                    Console.WriteLine($"You can't go {direction}ast!");
+                }
+                else if (direction == "w")
+                {
+                    Console.WriteLine($"You can't go {direction}est!");
+                }
+                
             }
         }
         private bool forestVisited = false;
@@ -501,7 +517,7 @@ namespace WasteHunters
             
             Console.Write("Type ");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write("'north', 'south', 'east', 'west', or 'out'");
+            Console.Write("'n' for north, 's' for south, 'e' for east, 'w' for west, or 'o' for out");
             Console.ResetColor();
             Console.WriteLine(" (if you are in the hallway).");
 
