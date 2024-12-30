@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\me\\.nuget\\packages\\": {}
+    "/Users/davidskorepa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\me\\Desktop\\semester\\wastehunters\\worldofzuul\\WorldOfZuul.csproj",
+      "projectUniqueName": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
       "projectName": "WorldOfZuul",
-      "projectPath": "C:\\Users\\me\\Desktop\\semester\\wastehunters\\worldofzuul\\WorldOfZuul.csproj",
-      "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\me\\Desktop\\semester\\wastehunters\\worldofzuul\\obj\\",
+      "projectPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
+      "packagesPath": "/Users/davidskorepa/.nuget/packages/",
+      "outputPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WorldOfZuul/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/davidskorepa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -65,15 +65,11 @@
             "version": "[6.0.33, 6.0.33]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
             "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[6.0.33, 6.0.33]"
           }
         ],
@@ -82,7 +78,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

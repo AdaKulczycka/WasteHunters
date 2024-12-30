@@ -39,17 +39,17 @@ namespace WasteHunters
             Room? livingRoom = new("Living room", "You are in the living room.\n To the north you see your kitchen.\n To the east there is... nothing.\n To the south there is... nothing.\n To the west there is... nothing." ,new List<string>{ "TV", "Pizza box", "Used tissue" });
 
             Room? cityCenter = new("City center", "You've entered the city center.\n To the north you see a factory.\n To the east you see the beach.\n To the south you see a mall.\n To the west you can enter your house into the hallway." ,new List<string>{ "Cigarette butts", "Empty aluminium cans", "Receipts and paper scraps" });
-            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); //"Cables", "Polystyrene", "Metal cleaning acid"
+            Room? factory = new("Factory", "You've entered a factory.\n To the north you see a forest.\n To the east you see a beach.\n To the south you see the City Center.\n To the west you see a pond." ,new List<string>{ "ATOMIC BOMB" }); 
             Room? mall = new("Mall", "You've entered a mall.\n To the north you see the City Center.\n To the east you see a beach.\n To the south you see a beach.\n To the west you see a park." ,new List<string>{ "Plastic bottles", "Food wrappers", "Plastic wraps and boxes" });
             Room? park = new("Park", "You've entered a park.\n To the north there is... nothing.\n To the east you see a mall.\n To the south you see a beach.\n To the west you see a school." ,new List<string>{ "Bubble gums", "Bottle caps", "Broken glass" });
             Room? forest = new("Forest", "As you look around, you see numerous trees struggling to thrive. The soil beneath them is dry, and their branches seem weak. There's a great way to \nreduce waste and help combat overproduction and overconsumption—composting! Would you like to start a compost to nourish the earth and give these \ntrees a chance to grow stronger? You've entered a forest.\n To the north you see a beach.\n To the east you see a beach.\n To the south you see a factory.\n To the west you see a waterfall." ,new List<string>{ "Tire", "Bottle caps", "Plastic bottles" });
             Room? waterfall = new("Waterfall", "You've entered a waterfall.\n To the north you see a beach.\n To the east you see a forest.\n To the south you see a pond.\n To the west you see a dumping yard." ,new List<string>{ "Wet wipes", "Empty aluminium cans", "Flip-flops" });
             Room? clearing = new("Clearing", "You've entered a clearing.\n To the north you see a beach.\n To the east you see a waterfall.\n To the south you see a dumping yard.\n To the west you see a beach." ,new List<string>{ "Old tent", "Broken glass", "Paper plates" });
             Room? pond = new("Pond", "You've entered a pond.\n To the north you see a waterfall.\n To the east you see a factory.\n To the south  you see... nothing.\n To the west you see a dumping yard." ,new List<string>{ "Empty aluminium cans", "Plastic straw", "Fishing nets" });
-            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard.\n To the north you see a clearing.\n To the east you see a pond.\n To the south you see a museum.\n To the west you see a beach." ,new List<string>{"Nothing to see here"}); //Implement except this location, there is nothing to pick up here
-            Room? groceryStore = new("Grocery store", "You've entered a grocery store.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." /*yard?*/ ,new List<string>{ "Juice boxes", "Plastic bags", "Snack packaging" });
+            Room? dumpingYard = new("Dumping yard", "You've entered a dumping yard.\n To the north you see a clearing.\n To the east you see a pond.\n To the south you see a museum.\n To the west you see a beach." ,new List<string>{"Nothing to see here"}); 
+            Room? groceryStore = new("Grocery store", "You've entered a grocery store.\n To the north you see a museum.\n To the east you see a park.\n To the south you see a beach.\n To the west you see a beach." ,new List<string>{ "Juice boxes", "Plastic bags", "Snack packaging" });
             Room? restaurant = new("Restaurant", "You've entered a restaurant.\n To the north you see a dumping yard.\n To the east you see... nothing.\n To the south you see a grocery store.\n To the west you see a beach." ,new List<string>{ "Food leftovers", "Glass bottles", "Empty aluminium cans" });
-            // Need to update the long description of all the beaches below
+
             beachTrash = new List<string>{ "Plastic bottles", "Fishing nets", "Clothing", "Flip-flops", "Plastic straw", "Sand toy", "Beach ball", "Sunscreen bottles", "Popped inflatable rafts", "Abandoned beach towels", "Plastic wraps and boxes", "Cigarette butts" };
             Room? beachNorth1 = new("Beach", "You've entered a beach." ,beachTrash);
             Room? beachNorth2 = new("Beach", "You've entered a beach." ,beachTrash);
@@ -70,120 +70,6 @@ namespace WasteHunters
             Room? beachSouthEast = new("Beach", "You've entered a beach." ,beachTrash);
             Room? beachSouthWest = new("Beach", "You've entered a beach." ,beachTrash);
             Room? beachNorthWest = new("Beach", "You've entered a beach." ,beachTrash);
-
-
-            //ALGORITHM FOR SETTING UP THE MOVEMENT IN BETWEEN THE ROOMS, DOESNT WORK, BECAUSE OF THE MOVEMENT IN BETWEEN
-        //THE ROOMS OF THE APARTMENT, IDK 
-
-        // var rooms = new Dictionary<string, Room>();
-        // var coordinates = new Dictionary<(int X, int Y), Room>();
-
-        // var roomDefinitions = new List<(string Name, int X, int Y)>
-        // {
-        //     // Row 1 (top row)
-        //     ("beachNorthWest", 0, 6), ("beachNorth1", 1, 6), ("beachNorth2", 2, 6),
-        //     ("beachNorth3", 3, 6), ("beachNorthEast", 4, 6),
-
-        //     // Row 2
-        //     ("beachWest1", 0, 5), ("clearing", 1, 5), ("waterfall", 2, 5),
-        //     ("forest", 3, 5), ("beachEast1", 4, 5),
-
-        //     // Row 3
-        //     ("beachWest2", 0, 4), ("dumpingYard", 1, 4), ("pond", 2, 4),
-        //     ("factory", 3, 4), ("beachEast2", 4, 4),
-
-        //     // Row 4
-        //     ("beachWest3", 0, 3), ("restaurant", 1, 3), ("kitchen", 2, 3),
-        //     ("hallway", 3, 3), ("cityCenter", 4, 3), ("beachEast3", 5, 3),
-
-        //     // Row 5
-        //     ("beachWest4", 0, 2), ("groceryStore", 1, 2), ("park", 2, 2),
-        //     ("mall", 3, 2), ("beachEast4", 4, 2),
-
-        //     // Row 6 (bottom row)
-        //     ("beachSouthWest", 0, 1), ("beachSouth1", 1, 1), ("beachSouth2", 2, 1),
-        //     ("beachSouth3", 3, 1), ("beachSouthEast", 4, 1)
-        // };
-
-        // // Step 1: Populate the `rooms` and `coordinates`
-        // foreach (var (name, x, y) in roomDefinitions)
-        // {
-        //     Room? room = name switch
-        //     {
-        //         "beachNorthWest" => beachNorthWest,
-        //         "beachNorth1" => beachNorth1,
-        //         "beachNorth2" => beachNorth2,
-        //         "beachNorth3" => beachNorth3,
-        //         "beachNorthEast" => beachNorthEast,
-        //         "beachWest1" => beachWest1,
-        //         "clearing" => clearing,
-        //         "waterfall" => waterfall,
-        //         "forest" => forest,
-        //         "beachEast1" => beachEast1,
-        //         "beachWest2" => beachWest2,
-        //         "dumpingYard" => dumpingYard,
-        //         "pond" => pond,
-        //         "factory" => factory,
-        //         "beachEast2" => beachEast2,
-        //         "beachWest3" => beachWest3,
-        //         "restaurant" => restaurant,
-        //         "kitchen" => kitchen,
-        //         "hallway" => hallway,
-        //         "cityCenter" => cityCenter,
-        //         "beachEast3" => beachEast3,
-        //         "beachWest4" => beachWest4,
-        //         "groceryStore" => groceryStore,
-        //         "park" => park,
-        //         "mall" => mall,
-        //         "beachEast4" => beachEast4,
-        //         "beachSouthWest" => beachSouthWest,
-        //         "beachSouth1" => beachSouth1,
-        //         "beachSouth2" => beachSouth2,
-        //         "beachSouth3" => beachSouth3,
-        //         "beachSouthEast" => beachSouthEast,
-        //         _ => null
-        //     };
-
-        //     if (room != null)
-        //     {
-        //         rooms[name] = room;
-        //         coordinates[(x, y)] = room;
-        //     }
-        // }
-
-        // // Step 2: Set exits for each room
-        // foreach (var ((x, y), room) in coordinates)
-        // {
-        //     Room? north = coordinates.GetValueOrDefault((x, y + 1));
-        //     Room? east = coordinates.GetValueOrDefault((x + 1, y));
-        //     Room? south = coordinates.GetValueOrDefault((x, y - 1));
-        //     Room? west = coordinates.GetValueOrDefault((x - 1, y));
-
-        //     // Restricting apartment rooms
-        //     if (room == kitchen || room == bedroom || room == bathroom || room == livingRoom)
-        //     {
-        //         // Only connect these rooms to other apartment rooms
-        //         north = (room == kitchen) ? bedroom : north;
-        //         east = (room == kitchen) ? hallway : east;
-        //         south = (room == bedroom) ? kitchen : south;
-        //         west = (room == bathroom) ? bedroom : west;
-
-        //         // Prevent direct exits to the outside
-        //         if (room != hallway)
-        //         {
-        //             north = south = east = west = null;
-        //         }
-        //     }
-
-        //     // Special case: Allow the hallway to connect to the city center
-        //     if (room == hallway)
-        //     {
-        //         east = cityCenter;
-        //     }
-
-        //     // Set exits for the room
-        //     room.SetExits(north, east, south, west);
-        // }
 
             hallway.SetExits(bathroom, cityCenter, null, kitchen); // North, East, South, West
             bathroom.SetExits(null, null, hallway, bedroom);
@@ -600,21 +486,17 @@ namespace WasteHunters
                 myTimer = null; // Set the timer to null to prevent further use
             }
         } 
-        //vlad
         private static void PrintWelcome()
         {
             Console.WriteLine("Welcome to the Waste Hunters game!");
             Console.WriteLine("It is an interactive and educational game based on the 12th SDG. \n(sustainable consumption and production patterns)\n");
-            Console.WriteLine("You woke up from a beautiful dream, where you had a vision of how the island of Zool once looked liked. You decide that this dream is a sign and that you are encouraged to save the island from all the trash there is. That is how you become a Waste Hunter.");
+            Console.WriteLine("You woke up from a beautiful dream, where you had a vision of how the island of Zuul once looked liked. You decide that this dream is a sign and that you are encouraged to save the island from all the trash there is. That is how you become a Waste Hunter.");
             PrintHelp();
             Console.WriteLine();
         }
 
         private static void PrintHelp()
         {
-            Console.WriteLine("You are lost. You are alone. You wander");
-            Console.WriteLine("around the city.");
-            Console.WriteLine();
             Console.WriteLine("Navigate by typing");
             
             Console.Write("Type ");
@@ -622,6 +504,12 @@ namespace WasteHunters
             Console.Write("'north', 'south', 'east', 'west', or 'out'");
             Console.ResetColor();
             Console.WriteLine(" (if you are in the hallway).");
+
+            Console.Write("Type ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("'map'");
+            Console.ResetColor();
+            Console.WriteLine(" to print the map of the world.");
 
             Console.Write("Type ");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -664,50 +552,12 @@ namespace WasteHunters
             Console.Write("'inventory'");
             Console.ResetColor();
             Console.WriteLine(" to show the inventory.");
-            Console.Write("test");
 
             Console.Write("Type ");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("'tip'");
             Console.ResetColor();
             Console.WriteLine(" To show you a tip for recycling a specific item.");
-
-            // Console.WriteLine("You are lost. You are alone. You wander");
-            // Console.WriteLine("around the city.");
-            // Console.WriteLine();
-            // Console.WriteLine("Navigate by typing 'north', 'south', 'east', 'west', or 'out' (if you are in the hallway).");
-            // Console.WriteLine("Type 'look' for more details.");
-            // Console.WriteLine("Type 'back' to go to the previous room.");
-            // Console.WriteLine("Type 'help' to print this message again.");
-            // Console.WriteLine("Type 'quit' to exit the game.");
-            // Console.WriteLine("Type 'trash' to show the trash in the current room");
-            // Console.WriteLine("Type 'take' to pick up the trash in the room");
-            // Console.WriteLine("Type 'inventory' to show the inventory");
         }
     }
 }
-
-//NPCs talking about specific trash doing shit to specific environment
-//Special items to give special points or superpowers
-//Crafting objects from the trash in the inventory
-// MAKE DICTIONARY WITH EXAMPLE HOW IT SHOULD BE SEPERATED, IF NOT CORRECT LOSE POINTS
-
-// Sorting Guide Booklet
-// When collected, this booklet provides hints or tips about the correct sorting categories for different trash items. 
-// This could either reveal hints about items you’ve already collected or help with new, more challenging trash types.
-
-// Compost in forest/park
-// special inventory for compost, and option to dump it in the forest for extra points
-
-// create a string list of inventory categories to easy access
-
-// do algorithm for the setexits, do list of lists so that it doesnt look like shit
-// [
-//     [
-//         Beach, Beach, Beach, ...
-//     ],
-//     [
-//         Beach, Clearing, ...
-//     ]
-// ]
-// pasp
