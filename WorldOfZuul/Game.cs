@@ -310,7 +310,7 @@ namespace WasteHunters
                         }
                         else
                         {
-                            Console.WriteLine("Specify an item to get sorting advice. Example: 'tip plastic bottle'.");
+                            Console.WriteLine("Specify an item to get sorting advice. Example: 'tip PlasticBottles'.");
                         }
                         break;
                    
