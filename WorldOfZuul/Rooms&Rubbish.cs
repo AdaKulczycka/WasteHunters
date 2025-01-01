@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace WasteHunters
 {
     public static class Rubbish

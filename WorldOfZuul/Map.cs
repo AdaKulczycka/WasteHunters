@@ -1,8 +1,3 @@
-using System.Collections;
-using System.ComponentModel;
-using System.Globalization;
-using System.Runtime.InteropServices;
-
 namespace WasteHunters
 {
     public class Map

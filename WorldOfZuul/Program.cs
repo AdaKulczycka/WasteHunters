@@ -1,6 +1,4 @@
-﻿using System.Timers;
-
-namespace WasteHunters
+﻿namespace WasteHunters
 {
     public class Program
     {

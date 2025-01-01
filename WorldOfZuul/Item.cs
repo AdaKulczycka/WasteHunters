@@ -1,7 +1,3 @@
-using System.Collections;
-using System.ComponentModel;
-using System.Runtime.InteropServices;
-
 namespace WasteHunters{
     public class Inventory{
         int sum = 0;
@@ -101,7 +97,22 @@ namespace WasteHunters{
             }
             points += sum;
             sum = 0;
-            Console.WriteLine($"You have successfully recycled the trash. You now have {points} points");
+            Console.WriteLine($"You have recycled the trash.");
+            if (points < 0)
+            {
+                Console.WriteLine($"You now have {points} points.");
+                Console.WriteLine("You need to improve your recycling skills. It seems like there is a lot to learn. Keep trying!");
+            }
+            if (points > 0 && points < 100)
+            {
+                Console.WriteLine($"You now have {points} points.");
+                Console.WriteLine("Good job, but there is room for improvement. Some items were sorted correctly, but others need a closer look.");            
+            }
+            if (points > 100)
+            {
+                Console.WriteLine($"You now have {points} points.");
+                Console.WriteLine("Amazing job! You recycled the majority or everything correctly. Keep up the great work and stay green!");
+            }
         }
         public void RemoveItem(string category, string itemName)
         {
