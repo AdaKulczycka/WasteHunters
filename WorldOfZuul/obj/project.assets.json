@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/davidskorepa/.nuget/packages/": {}
+    "C:\\Users\\me\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
+      "projectUniqueName": "C:\\Users\\me\\Desktop\\New folder (4)\\wastehunters\\worldofzuul\\WorldOfZuul.csproj",
       "projectName": "WorldOfZuul",
-      "projectPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WasteHunters/WorldOfZuul/WorldOfZuul.csproj",
-      "packagesPath": "/Users/davidskorepa/.nuget/packages/",
-      "outputPath": "/Users/davidskorepa/Desktop/Uni/Semester project/WorldOfZuul/WasteHunters/WasteHunters/WorldOfZuul/obj/",
+      "projectPath": "C:\\Users\\me\\Desktop\\New folder (4)\\wastehunters\\worldofzuul\\WorldOfZuul.csproj",
+      "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\me\\Desktop\\New folder (4)\\wastehunters\\worldofzuul\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/davidskorepa/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -65,11 +65,15 @@
             "version": "[6.0.33, 6.0.33]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "name": "Microsoft.NETCore.App.Host.win-x64",
             "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[6.0.33, 6.0.33]"
           }
         ],
@@ -78,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -127,7 +127,7 @@ namespace WasteHunters{
             {
             return true;
             }
-            if (category == "paper" && (itemName == "Exhibit map" || itemName == "Empty roll of toilet paper" || itemName == "Bottle caps" || itemName == "Empty tube of toothpaste" || itemName == "" || itemName == "Juice boxes" || itemName == "Sand toy" || itemName == "Sunscreen bottles"))
+            if (category == "paper" && (itemName == "Exhibit map" || itemName == "Empty roll of toilet paper"))
             {
             return true;
             }
