@@ -123,11 +123,11 @@ namespace WasteHunters{
         }
         public bool CorrectlySorted(string category, string itemName)
         {
-            if (category == "plastic" && (itemName == "Plastic bottles" || itemName == "Plastic wraps and boxes" || itemName == "Bottle caps" || itemName == "Empty tube of toothpaste" || itemName == "" || itemName == "Juice boxes" || itemName == "Sand toy" || itemName == "Sunscreen bottles" || itemName == "Empty milk carton" || itemName == "Empty aluminium cans" || itemName == "Empty can of animal food"))
+            if (category == "plastic" && (itemName == "Plastic bottles" || itemName == "Plastic wraps and boxes" || itemName == "Bottle caps" || itemName == "Empty tube of toothpaste" || itemName == "Plastic bags" || itemName == "Juice boxes" || itemName == "Sand toy" || itemName == "Sunscreen bottles" || itemName == "Empty milk carton" || itemName == "Empty aluminium cans" || itemName == "Empty can of animal food"))
             {
             return true;
             }
-            if (category == "paper" && (itemName == "Exhibit map" || itemName == "Empty roll of toilet paper" || itemName == "Bottle caps" || itemName == "Empty tube of toothpaste" || itemName == "Plastic bags" || itemName == "Juice boxes" || itemName == "Sand toy" || itemName == "Sunscreen bottles"))
+            if (category == "paper" && (itemName == "Exhibit map" || itemName == "Empty roll of toilet paper" || itemName == "Bottle caps" || itemName == "Empty tube of toothpaste" || itemName == "" || itemName == "Juice boxes" || itemName == "Sand toy" || itemName == "Sunscreen bottles"))
             {
             return true;
             }
